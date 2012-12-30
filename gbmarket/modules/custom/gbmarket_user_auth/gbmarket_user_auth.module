@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Provide automatically OAuth consumers for users.
+ */
+
+/**
+ * Implements hook_menu_alter().
+ *
+ * User doesn't need to access OAuth consumer settings.
+ */
+function gbmarket_user_auth_menu_alter(&$items) {
+  $items['user/%user/oauth']['access callback'] = '_gbmarket_user_auth_oauth_access';
+}
+
+/**
+ * Grants access only to OAuth administrators.
+ *
+ * @see gbmarket_user_auth_menu_alter()
+ */
+function _gbmarket_user_auth_oauth_access($user) {
+  return user_access('administer oauth', $user);
+}

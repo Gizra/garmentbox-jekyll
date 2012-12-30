@@ -1,0 +1,194 @@
+.front {
+
+  .pane-user-login {
+    background: url('../images/bg-register.png') no-repeat;
+    width: 234px;
+    height: 330px;
+    position: absolute;
+    right: 0; //LTR
+    top: 0;
+  }
+
+  .panel-col-top {
+    background: url('../images/bg-front-sides.png');
+    height: 508px;
+
+    .container-12 {
+      height: 508px;
+      background: url('../images/bg-front.jpg') no-repeat;
+    }
+
+    .views-row-first {
+      width: 420px;
+      padding-top: 74px;
+      margin: 0 15px;
+
+      h2 {
+        font-size: 50px;
+        line-height: 50px;
+        color: #dce4e6;
+        font-weight: normal;
+        padding-top: 0;
+      }
+
+      .field-content p {
+        font-size: 20px;
+        font-weight: bold;
+        color: #a2c4c5;
+        margin-bottom: 30px;
+
+      }
+    }
+  }
+
+  .panel-col-center {
+    background: url("../images/bg-paper.png") repeat-x;
+    height: 278px;
+    padding-top: 48px;
+
+    .views-field-title {
+      display: none;
+    }
+
+    .views-row {
+      width: 33%;
+      float: left; //LTR
+      padding: 0;
+
+      .field-content {
+
+        .circle {
+          width: 108px;
+          height: 110px;
+          text-align: center;
+          margin: 0 auto;
+
+          .cloud {
+            margin-top: 31px;
+            display: inline-block;
+            width: 68px;
+            height: 41px;
+            background-position: 0 -150px;
+          }
+
+          .inventory {
+            margin-top: 31px;
+            display: inline-block;
+            width: 59px;
+            height: 46px;
+            background-position: 0 -225px;
+          }
+
+          .builtin-shop {
+            margin-top: 31px;
+            display: inline-block;
+            width: 46px;
+            height: 43px;
+            background-position: -75px -150px;
+          }
+        }
+
+        h3 {
+          text-align: center;
+          color: #484848;
+          font-size: 30px;
+        }
+
+        p {
+          text-align: center;
+          color: #9bc3c5;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+
+  .panel-col-center2 {
+    background: url("../images/bg-opensource.png") repeat-x;
+    height: 43px;
+
+    .views-field-title {
+      display: none;
+    }
+
+    p {
+      text-align: center;
+      margin: 0;
+      color: #dedede;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 45px;
+      text-shadow: #393536 0 1px 1px;
+    }
+  }
+
+  .panel-col-center3 {
+    background: url("../images/bg-sections.png") repeat-x;
+    height: 446px;
+
+    .pane-custom {
+      margin-top: 58px;
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  .pane-homepage-sections-panel-homepage-sections {
+    padding-top: 20px;
+
+    h2 {
+      text-align: center;
+      color: #512d3b;
+      font-weight: normal;
+      font-size: 30px;
+      margin-bottom: 36px;
+    }
+
+    .views-row {
+      float: left; //LTR
+      width: 206px;
+      height: 174px;
+      background: url("../images/sprites.png") no-repeat -300px 0;
+      text-align: center;
+      margin-right: 17px; //LTR
+      padding: 33px 22px 0;
+
+      .section {
+        height: 157px;
+        background: url("../images/add-ons.png") no-repeat bottom;
+      }
+
+      &.views-row-2 .section {
+        background-image: url("../images/services.png");
+        background-position: center;
+      }
+
+      &.views-row-3 .section {
+        background-image: url("../images/support.png");
+        background-position: center;
+      }
+
+      &.views-row-4 .section {
+        background-image: url("../images/training.png");
+        background-position: center;
+      }
+
+      .views-field-title a {
+        color: #c0436f;
+        text-decoration: none;
+        font-size: 25px;
+      }
+
+      .views-field-field-subtitle {
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      .views-field-body {
+        font-size: 12px;
+      }
+    }
+  }
+}

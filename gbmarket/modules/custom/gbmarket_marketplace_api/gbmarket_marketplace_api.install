@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Create a consumer for the marketplace connector module.
+ */
+function gbmarket_marketplace_api_install() {
+  $consumer = new DrupalOAuthConsumer('i5tDsKKPL6faaa6/ml3doZ1MsI8=', 'mDCVwOpJARLq2mGIW3fDimkEj9k=', array(
+    'name' => 'Marketplace connector',
+    'context' => 'gbmarket_marketplace_api',
+    'callback_url' => 'oob',
+    'uid' => 0,
+    'provider_consumer' => TRUE,
+  ));
+  $consumer->write();
+}

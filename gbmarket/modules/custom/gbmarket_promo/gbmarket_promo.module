@@ -1,0 +1,73 @@
+<?php
+/**
+ * @file
+ * Code for the gbmarket promo feature.
+ */
+
+include_once 'gbmarket_promo.features.inc';
+
+
+/**
+ * Implement hook_field_formatter_info().
+ */
+function gbmarket_promo_field_formatter_info() {
+  return array(
+    'gbmarket_section_features' => array(
+      'label' => t('Field collection formatter for homepage section features'),
+      'field types' => array('field_collection'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function gbmarket_promo_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  if ($display['type'] != 'gbmarket_section_features') {
+    return;
+  }
+
+  $element = array();
+
+  $list = array();
+  foreach ($items as $item) {
+    $wrapper = entity_metadata_wrapper('field_collection_item', $item['value']);
+    $link = $wrapper->field_feature_link->value();
+    $image = $wrapper->field_feature_image->value();
+
+    $variables = array(
+      'path' => $image['uri'],
+      'style_name' => 'front_page_section_pictures',
+      'alt' => $link['title'],
+      'attributes' => array(
+        'class' => 'market-place-image',
+      ),
+    );
+
+    $list[] = l(theme('image_style', $variables), $link['url'], array('html' => TRUE));
+  }
+
+  $element[0]['#markup'] = theme('item_list', array('items' => $list, 'attributes' => array('class' => 'marketplace-images')));
+
+  return $element;
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function gbmarket_promo_views_pre_render(&$view) {
+  if ($view->name != 'homepage_slideshow') {
+    return;
+  }
+
+  drupal_add_js(drupal_get_path('module', 'gbmarket_promo') . '/js/gbmarket_promo.js', array('weight' => 10));
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function gbmarket_promo_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
+}

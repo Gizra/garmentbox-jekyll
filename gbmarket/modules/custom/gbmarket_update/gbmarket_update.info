@@ -1,0 +1,6 @@
+name = gbmarket update
+description = A simple module that handle the update code.
+core = 7.x
+package = gbmarket
+php = 5.2.4
+version = 7.x-1.0-dev

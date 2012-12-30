@@ -1,0 +1,73 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_header.scss";
+@import "_front.scss";
+@import "_messages.scss";
+@import "_register.scss";
+@import "_form.scss";
+
+.container-12 {
+  width: 1100px !important;
+  position: relative;
+
+  .grid-12 {
+    width: 1080px !important;
+  }
+}
+
+#section-content {
+  position: relative;
+}
+
+#section-footer {
+  background: url('../images/bg-footer.jpg') repeat-x;
+  height: 196px;
+  color: #b1b1b1;
+}
+
+body {
+  background-color: #020000;
+  color: #333333;
+
+  .pane-content {
+    padding: 0 16px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+h3 {
+  color: black;
+  font-weight: normal;
+  padding-top: 10px;
+}
+
+ul li.leaf, ul li.collapsed {
+  list-style-type: none;
+  list-style-image: none;
+  padding: 0;
+  margin: 0 15px 0 0; // LTR
+
+  &.last {
+    margin-right: 0; // LTR
+  }
+}
+
+.sprite {
+  background: url('../images/sprites.png') no-repeat;
+}
+
+a.button {
+  @include button;
+
+  &.alter {
+    @include alter-button;
+  }
+}

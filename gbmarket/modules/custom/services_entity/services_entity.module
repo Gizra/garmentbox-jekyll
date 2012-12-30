@@ -1,0 +1,130 @@
+<?php
+
+/**
+ * Prepare data structrure recursively and using metadata wrapper to retrieve
+ * the hierarchical properties.
+ */
+function services_entity_prepare_structure(EntityStructureWrapper $wrapper, array $properties = array()) {
+  if (empty($properties)) {
+    // By default, expand all the non-computed properties.
+    $properties = array();
+    foreach ($wrapper->getPropertyInfo() as $property_name => $property_info) {
+      if (empty($property_info['computed'])) {
+        $properties[$property_name] = $property_name;
+      }
+    }
+  }
+
+  return _services_entity_prepare_structure($wrapper, $properties);
+}
+
+function _services_entity_prepare_structure(EntityMetadataWrapper $wrapper, array $fields) {
+  $result = array();
+
+  foreach ($fields as $property_name => $sub_properties) {
+    $property_wrapper = $wrapper->$property_name;
+    $type = $property_wrapper->type();
+    $info = $property_wrapper->info();
+
+    if (!empty($info['field'])) {
+      $field_info = field_info_field($property_name);
+      $translatable = !empty($field_info['translatable']) ? 1 : 0;
+      $cardinality = $field_info['cardinality'];
+
+      // Fetch the list of actual languages for this field in the underlying entity.
+      $underlying_entity = $wrapper->value();
+      $languages = isset($underlying_entity->$property_name) ? array_keys($underlying_entity->$property_name) : array();
+    }
+    else {
+      $translatable = 0;
+      $cardinality = $type == 'list' || entity_property_list_extract_type($type) ? -1 : 1;
+      $languages = array(LANGUAGE_NONE);
+    }
+
+    // Remove the inner list layer.
+    if ($sub_type = entity_property_list_extract_type($type)) {
+      $type = $sub_type;
+      $is_list = TRUE;
+    }
+    else {
+      $is_list = FALSE;
+    }
+
+    // Now iterate on the list of languages to fetch the values.
+    $property_result = array();
+    foreach ($languages as $language) {
+      $wrapper->language($language);
+      $property_wrapper = $wrapper->$property_name;
+
+      foreach ($is_list ? $property_wrapper : array($property_wrapper) as $index => $sub_wrapper) {
+        if ($sub_wrapper instanceof EntityStructureWrapper) {
+          // Required because Entity API doesn't propagate the language for us.
+          $sub_wrapper->language($language);
+        }
+
+        if (is_array($sub_properties)) {
+          $property_result[$language][$index] = services_entity_prepare_structure($sub_wrapper, $sub_properties);
+        }
+        else {
+          $value = $sub_wrapper->raw();
+          if (is_array($value)) {
+            $property_result[$language][$index] = $value;
+          }
+          else {
+            $property_result[$language][$index] = array(
+              'value' => $type == 'boolean' && !$value ? '0' : $value,
+            );
+          }
+        }
+      }
+    }
+
+    if (count($property_result)) {
+      $result[$property_name] = $property_result + array(
+        'type' => $type,
+        'cardinality' => $cardinality,
+        'translatable' => $translatable,
+      );
+    }
+    else {
+      $result[$property_name] = NULL;
+    }
+
+  }
+
+  return $result;
+}
+
+/**
+ * Implements hook_entity_query_alter().
+ *
+ * Convert EntityFieldQuerys on taxonomy terms that have an entity condition
+ * on term bundles (vocabulary machine names). Since the vocabulary machine
+ * name is not present in the {taxonomy_term_data} table itself, we have to
+ * convert the bundle condition into a proprety condition of vocabulary IDs to
+ * match against {taxonomy_term_data}.vid.
+ *
+ * @TODO Remove when http://drupal.org/node/1054162 gets fixed.
+ */
+function services_entity_entity_query_alter($query) {
+  $conditions = &$query->entityConditions;
+
+  // Alter only taxonomy term queries with bundle conditions.
+  if (isset($conditions['entity_type']) && $conditions['entity_type']['value'] == 'taxonomy_term' && isset($conditions['bundle'])) {
+    // Convert vocabulary machine names to vocabulary IDs.
+    $vids = array();
+    if (is_array($conditions['bundle']['value'])) {
+      foreach ($conditions['bundle']['value'] as $vocabulary_machine_name) {
+        $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_machine_name);
+        $vids[] = $vocabulary->vid;
+      }
+    }
+    else {
+      $vocabulary = taxonomy_vocabulary_machine_name_load($conditions['bundle']['value']);
+      $vids = $vocabulary->vid;
+    }
+
+    $query->propertyCondition('vid', $vids, $conditions['bundle']['operator']);
+    unset($conditions['bundle']);
+  }
+}

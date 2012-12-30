@@ -1,0 +1,139 @@
+<?php
+
+/**
+ * Implements hook_install.
+ */
+function gbmarket_user_install() {
+  db_update('system')
+    ->fields(array('weight' => 10))
+    ->condition('name', 'gbmarket_user')
+    ->execute();
+  variable_set('commerce_customer_profile_billing_addressbook', TRUE);
+}
+
+/**
+ * Configure Logintobogan.
+ */
+function gbmarket_user_update_7002() {
+  module_enable(array('logintoboggan'));
+  variable_set('logintoboggan_login_with_email', '1');
+  variable_set('user_email_verification', FALSE);
+  variable_set('logintoboggan_immediate_login_on_register', 1);
+}
+
+/**
+ * Increase module's weight.
+ */
+function gbmarket_user_update_7003() {
+  db_update('system')
+    ->fields(array('weight' => 10))
+    ->condition('name', 'gbmarket_user')
+    ->execute();
+}
+
+/**
+ * Configure commerce_addressbook.
+ */
+function gbmarket_user_update_7004() {
+  module_enable(array('commerce_addressbook'));
+  variable_set('commerce_customer_profile_billing_addressbook', TRUE);
+}
+
+/**
+ * Add webmaster role and its permissions.
+ */
+function gbmarket_user_update_7005() {
+  if (!user_role_load_by_name('webmaster')) {
+    $role = new stdClass();
+    $role->name = 'webmaster';
+    user_role_save($role);
+  }
+
+  $permissions = array(
+    'access administration menu',
+    'access administration pages',
+    'access content overview',
+    'access user profiles',
+    'administer commerce_customer_profile entities',
+    'administer customer profile types',
+    'administer nodes',
+    'administer pathauto',
+    'administer taxonomy',
+    'administer url aliases',
+    'create basic_page content',
+    'create commerce_customer_profile entities',
+    'create homepage_section content',
+    'create homepage_slideshow content',
+    'create messages',
+    'create page_element content',
+    'create service_add_on content',
+    'create training_category content',
+    'create training_session content',
+    'create url aliases',
+    'create webform content',
+    'delete any basic_page content',
+    'delete any homepage_section content',
+    'delete any homepage_slideshow content',
+    'delete any page_element content',
+    'delete any service_add_on content',
+    'delete any training_category content',
+    'delete any training_session content',
+    'delete any webform content',
+    'delete own basic_page content',
+    'delete own homepage_section content',
+    'delete own homepage_slideshow content',
+    'delete own page_element content',
+    'delete own service_add_on content',
+    'delete own training_category content',
+    'delete own training_session content',
+    'delete own webform content',
+    'delete revisions',
+    'edit any basic_page content',
+    'edit any commerce_customer_profile entity',
+    'edit any homepage_section content',
+    'edit any homepage_slideshow content',
+    'edit any page_element content',
+    'edit any service_add_on content',
+    'edit any training_category content',
+    'edit any training_session content',
+    'edit any webform content',
+    'edit own basic_page content',
+    'edit own homepage_section content',
+    'edit own homepage_slideshow content',
+    'edit own page_element content',
+    'edit own service_add_on content',
+    'edit own training_category content',
+    'edit own training_session content',
+    'edit own webform content',
+    'notify of path changes',
+    'revert revisions',
+    'use text format filtered_html',
+    'use text format full_html',
+    'view any commerce_customer_profile entity',
+    'view any commerce_order entity',
+    'view own unpublished content',
+    'view revisions',
+  );
+  $role = user_role_load_by_name('webmaster');
+  user_role_grant_permissions($role->rid, $permissions);
+}
+
+/**
+ * Delete field_address instance.
+ */
+function gbmarket_user_update_7006() {
+  field_delete_field('field_address');
+}
+
+/**
+ * Force views to reload the orders views.
+ *
+ * This fixes a bug when overriding the default views from commerce Orders.
+ */
+function gbmarket_user_update_7007() {
+  module_load_include('module', 'entity');
+  module_load_include('module', 'ctools');
+  module_load_include('module', 'views');
+  $view = views_get_view('commerce_backoffice_user_orders', TRUE);
+  views_save_view($view);
+}

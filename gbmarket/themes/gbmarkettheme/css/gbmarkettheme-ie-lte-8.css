@@ -1,0 +1,21 @@
+form select {
+  background-image: none !important;
+}
+
+.node-type-webform form .form-type-checkbox input {
+  top: 5px;
+}
+
+.node-type-webform form .form-type-radio input {
+  margin-top: 5px;
+}
+
+footer.section-footer {
+  background: #020000;
+  filter: none;
+}
+
+form input.form-submit {
+  background: #4CA6DF;
+  filter: none;
+}

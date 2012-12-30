@@ -1,0 +1,112 @@
+name = gbmarket Profile
+description = Set up gbmarket installation.
+core = 7.x
+
+dependencies[] = addressfield
+dependencies[] = admin_menu_toolbar
+dependencies[] = block
+dependencies[] = color
+dependencies[] = contact
+dependencies[] = contextual
+dependencies[] = ctools
+dependencies[] = dblog
+dependencies[] = entity
+dependencies[] = features
+dependencies[] = field_ui
+dependencies[] = field_collection
+dependencies[] = file
+dependencies[] = help
+dependencies[] = image
+dependencies[] = i18n
+dependencies[] = list
+dependencies[] = markdown
+dependencies[] = menu
+dependencies[] = module_filter
+dependencies[] = number
+dependencies[] = nodequeue
+dependencies[] = options
+dependencies[] = path
+dependencies[] = php
+dependencies[] = rules
+dependencies[] = rules_admin
+dependencies[] = search
+dependencies[] = search_api
+dependencies[] = search_api_solr
+dependencies[] = simpletest
+dependencies[] = strongarm
+dependencies[] = taxonomy
+dependencies[] = views
+dependencies[] = views_content
+dependencies[] = views_ui
+dependencies[] = views_slideshow
+dependencies[] = views_content
+dependencies[] = views_slideshow_cycle
+dependencies[] = panels
+dependencies[] = page_manager
+dependencies[] = entityreference
+dependencies[] = date
+dependencies[] = panels_mini
+dependencies[] = r4032login
+dependencies[] = openid_sso_provider
+dependencies[] = hint
+
+; Install the Commerce modules.
+dependencies[] = commerce
+dependencies[] = commerce_ui
+dependencies[] = commerce_cart
+dependencies[] = commerce_checkout
+dependencies[] = commerce_customer
+dependencies[] = commerce_customer_ui
+dependencies[] = commerce_line_item
+dependencies[] = commerce_line_item_ui
+dependencies[] = commerce_order
+dependencies[] = commerce_order_ui
+dependencies[] = commerce_payment
+dependencies[] = commerce_payment_ui
+dependencies[] = commerce_payment_example
+dependencies[] = commerce_price
+dependencies[] = commerce_product
+dependencies[] = commerce_product_ui
+dependencies[] = commerce_product_pricing
+dependencies[] = commerce_product_pricing_ui
+dependencies[] = commerce_product_reference
+dependencies[] = commerce_tax
+dependencies[] = commerce_tax_ui
+
+; Services related modules.
+dependencies[] = services
+dependencies[] = services_definition
+dependencies[] = oauth_common
+dependencies[] = oauth_common_providerui
+dependencies[] = services_oauth
+dependencies[] = libraries
+dependencies[] = rest_server
+dependencies[] = mimemail_compress
+dependencies[] = services_search_api_index
+
+; gbmarket features
+dependencies[] = gbmarket_marketplace_api
+
+; Custom gbmarket modules
+dependencies[] = gbmarket_user_auth
+dependencies[] = gbmarket_marketplace
+dependencies[] = gbmarket_content
+dependencies[] = gbmarket_pages
+dependencies[] = gbmarket_promo
+dependencies[] = gbmarket_trainings
+dependencies[] = gbmarket_add_ons
+dependencies[] = gbmarket_jirafe
+dependencies[] = gbmarket_user
+dependencies[] = gbmarket_services
+
+; Development tools feel free to disable them.
+dependencies[] = devel
+dependencies[] = diff
+dependencies[] = omega_tools
+dependencies[] = toolbar
+dependencies[] = migrate_ui
+
+; Migrate
+dependencies[] = gbmarket_migrate
+
+files[] = gbmarket.profile

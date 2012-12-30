@@ -1,0 +1,210 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ */
+function gbmarket_install() {
+  // Set default theme.
+  theme_enable(array('gbmarkettheme'));
+  variable_set('theme_default', 'gbmarkettheme');
+  theme_disable(array('bartik'));
+
+  // TODO: theme_enable($theme_list);
+  // Enable the admin theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', 'seven')
+    ->execute();
+
+  variable_set('admin_theme', 'seven');
+
+  // Set up markdown filter format.
+  $markdown_format = (object)array(
+    'format' => 'markdown',
+    'name' => 'Markdown',
+    'filters' => array(
+      'filter_markdown' => array(
+        'status' => 1,
+      ),
+    ),
+  );
+  filter_format_save($markdown_format);
+  user_role_change_permissions(DRUPAL_AUTHENTICATED_RID, array(filter_permission_name($markdown_format) => TRUE));
+
+  // Set up full html format.
+  $full_html_format = array(
+    'format' => 'full_html',
+    'name' => 'Full HTML',
+    'weight' => 1,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  filter_format_save((object)$full_html_format);
+
+  // Set up filtered html format.
+  $filtered_html_format = array(
+    'format' => 'filtered_html',
+    'name' => 'Filtered HTML',
+    'weight' => 0,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // HTML filter.
+      'filter_html' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 2,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  filter_format_save((object)$filtered_html_format);
+
+  // Set the site's front page.
+  variable_set('site_frontpage', 'front');
+
+  // Disable the overlay and the toolbar.
+  module_disable(array('overlay', 'toolbar'));
+
+  // Creating the sections nodequeue.
+  $queue = array(
+    'name' => 'front_page_sections',
+    'title' => 'Front page sections',
+    'subqueue_title' => '',
+    'size' => 4,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'types' => array('homepage_section'),
+    'show_in_links' => FALSE,
+    'show_in_tab' => TRUE,
+    'show_in_ui' => TRUE,
+    'subqueues' => TRUE,
+    'reference' => FALSE,
+    'reverse' => NULL,
+    'count' => 0,
+    'new' => TRUE,
+    'roles' => array(3),
+    'i18n' => 0,
+  );
+  $queue = (object)$queue;
+  nodequeue_save($queue);
+  nodequeue_add_subqueue($queue, $queue->name, $queue->title);
+
+  // Creating the training categories nodequeue.
+  $queue = array(
+    'name' => 'training_categories',
+    'title' => 'Training categories',
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'types' => array('training_category'),
+    'show_in_links' => FALSE,
+    'show_in_tab' => TRUE,
+    'show_in_ui' => TRUE,
+    'subqueues' => TRUE,
+    'reference' => FALSE,
+    'reverse' => NULL,
+    'count' => 0,
+    'new' => TRUE,
+    'roles' => array(3),
+    'i18n' => 0,
+  );
+  $queue = (object)$queue;
+  nodequeue_save($queue);
+  nodequeue_add_subqueue($queue, $queue->name, $queue->title);
+
+  // Creating the training categories nodequeue.
+  $queue = array(
+    'name' => 'services',
+    'title' => 'Services',
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'types' => array('webform'),
+    'show_in_links' => FALSE,
+    'show_in_tab' => TRUE,
+    'show_in_ui' => TRUE,
+    'subqueues' => TRUE,
+    'reference' => FALSE,
+    'reverse' => NULL,
+    'count' => 0,
+    'new' => TRUE,
+    'roles' => array(3),
+    'i18n' => 0,
+  );
+  $queue = (object)$queue;
+  nodequeue_save($queue);
+  nodequeue_add_subqueue($queue, $queue->name, $queue->title);
+
+  // Enable the node override for node view pages.
+  variable_set('page_manager_node_view_disabled', FALSE);
+
+  // Enable default permissions for system roles.
+  $filtered_html_permission = filter_permission_name($filtered_html_format);
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'access checkout', 'view own commerce_order entities'));
+
+  // Create a default role for site administrators, with all available
+  // permissions assigned.
+  $admin_role = new stdClass();
+  $admin_role->name = 'administrator';
+  $admin_role->weight = 2;
+  user_role_save($admin_role);
+  user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
+  // Set this as the administrator role.
+  variable_set('user_admin_role', $admin_role->rid);
+
+  // Assign user 1 the "administrator" role.
+  db_insert('users_roles')
+    ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
+    ->execute();
+
+  // Set Mimemail email format.
+  variable_set('mimemail_format', 'full_html');
+
+  // Use the administration theme when editing or creating content.
+  variable_set('node_admin_theme', TRUE);
+
+  // Set the contact form address.
+  $data = contact_load(1);
+  $data['recipients'] = 'brice@gizra.com';
+
+  drupal_write_record('contact',$data, array('cid'));
+
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access site-wide contact form'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access site-wide contact form'));
+}

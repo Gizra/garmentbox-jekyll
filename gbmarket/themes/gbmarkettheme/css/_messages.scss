@@ -1,0 +1,43 @@
+#messages {
+  width: 1100px;
+  margin: 0 auto;
+
+  .messages-wrapper {
+    position: absolute;
+    z-index: 1;
+
+    div.messages {
+      width: 1040px;
+      @include rounded-corners(4px);
+      color: white;
+      font-size: 18px;
+      padding-left: 60px; //LTR
+      text-shadow: black 0 1px 2px;
+      margin: 10px auto 0;
+
+      .krumo-root {
+        text-shadow: none;
+        color: #000;
+
+        ul {
+          font-size: 13px !important;
+          padding: 0 0 0 10px;
+          margin: 0;
+        }
+      }
+
+      background: rgba(145,208,45,0.6) url("../images/status-success.png") no-repeat 15px 10px;
+      border: 1px solid #a6c475;
+
+      &.error {
+        background: rgba(229,37,37,0.6) url("../images/status-error.png") no-repeat 15px 10px;
+        border-color: #b96464;
+      }
+
+      &.warning {
+        background: rgba(255,192,21,0.7) url("../images/status-warning.png") no-repeat 15px 10px;
+        border-color: #cbbd4d;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Here we create Distribution OAuth consumer.
+ */
+function gbmarket_user_auth_install() {
+  module_load_include('inc', 'oauth_common');
+  module_load_include('inc', 'oauth_common', 'oauth_common.admin');
+  module_load_include('inc', 'oauth_common_providerui', 'oauth_common.consumers');
+
+  $contexts = oauth_common_context_load_all();
+  $marketplace_context = 'gbmarket_marketplace_api';
+
+  if (isset($contexts[$marketplace_context])) {
+    // Admin user holds distribution consumer
+    $user = user_load(1);
+    $consumers = oauth_common_user_consumers($user->uid);
+
+    $consumer_exists = FALSE;
+    foreach ($consumers as $consumer) {
+      if ($consumer->name == 'Distribution' && $consumer->context == $marketplace_context) {
+        $consumer_exists = TRUE;
+        break;
+      }
+    }
+
+    if (!$consumer_exists) {
+      // Create distribution consumer
+      $consumer = new DrupalOAuthConsumer('distribution', md5('distribution'), array(
+        'name' => 'Distribution',
+        'context' => $marketplace_context,
+        'uid' => $user->uid,
+        'provider_consumer' => TRUE,
+        // We will provide callback URLs from distribution
+        // since many URLs will go via one consumer
+        'callback_url' => 'oob',
+      ));
+      $consumer->write();
+    }
+  }
+}

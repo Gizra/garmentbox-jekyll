@@ -1,0 +1,6 @@
+name = gbmarket marketplace consumer
+description = Provides automatically OAuth consumer for distribution.
+package = gbmarket
+core = 7.x
+
+dependencies[] = oauth_common_providerui

@@ -1,0 +1,221 @@
+<?php
+/**
+ * @file
+ * Code for the gbmarket add-ons feature.
+ */
+
+include_once 'gbmarket_add_ons.features.inc';
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function gbmarket_add_ons_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools') {
+    return 'plugins/' . $plugin;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Redirect sercive-add-ons products from add-to-cart directly to checkout.
+ */
+function gbmarket_add_ons_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+
+  if (strpos($form_id, 'commerce_cart_add_to_cart_form') !== 0) {
+    return;
+  }
+
+  //TODO: Handle other line item types when we'll have them.
+  if ($form['line_item_fields']['#bundle'] != 'jirafe_service_add_on') {
+    return;
+  }
+
+  // Change 'Add to cart' button text.
+  $form['submit']['#value'] = t('Subscribe');
+
+  // If the form has an email field, set its default value to the user's email.
+  if (!empty($form['line_item_fields']['field_email']) && !empty($user->mail)) {
+    $form['line_item_fields']['field_email'][LANGUAGE_NONE][0]['email']['#default_value'] = $user->mail;
+  }
+
+  // If the form has the site field, add a custom URL validator.
+  if (!empty($form['line_item_fields']['field_site'])) {
+    $form['line_item_fields']['field_site'][LANGUAGE_NONE][0]['#element_validate'][] = 'gbmarket_add_ons_site_url_validate';
+  }
+
+  // If the service node has a TOS value, show a TOS checkbox.
+  $wrapper = entity_metadata_wrapper('node', $form_state['context']['entity']);
+  if ($wrapper->field_tos_page->value()) {
+    $form['tos'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Terms of Service'),
+      '#description' => t('I agree to the <a href="@url">terms of service</a>', array('@url' => url($wrapper->field_tos_page->value()))),
+      '#required' => TRUE,
+      '#weight' => 40,
+    );
+  }
+
+  $form['#submit'][] = 'gbmarket_add_ons_redirect_to_cart';
+}
+
+/**
+ * Validation callback for the add to cart form.
+ *
+ * Validate the site URL field.
+ */
+function gbmarket_add_ons_site_url_validate($element, &$form_state) {
+  $value = $form_state['values']['line_item_fields']['field_site'][LANGUAGE_NONE][0];
+
+  // Make sure the URL starts with either 'http://' or 'https://'.
+  $http_pattern = 'https?:\/\/';
+  if (!preg_match("/^$http_pattern/", $value['url'])) {
+    $value['url'] = 'http://' . $value['url'];
+    // If it doesn't, prepend 'http://' to the URL.
+    form_set_value($element, $value, $form_state);
+  }
+
+  $url_error = FALSE;
+  // Make sure the URL host isn't localhost.
+  foreach (array('localhost', '127.0.0.1') as $host) {
+    if (preg_match("/^{$http_pattern}{$host}/", $value['url'])) {
+      $url_error = TRUE;
+    }
+  }
+
+  // The link field URL validator allow URLs such as 'http://example', which
+  // doesn't pass Jirafe's validation. Add a check to force the URL to have at
+  // least one dot somewhere within it.
+  if (!strpos($value['url'], '.')) {
+    $url_error = TRUE;
+  }
+
+  if ($url_error) {
+    form_set_error('line_item_fields][field_site', t('Please enter a public facing URL'));
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Add a message to the checkout complete page specifying custom line item
+ * (service related) fields.
+ */
+function gbmarket_add_ons_form_commerce_checkout_form_complete_alter(&$form, $form_state) {
+  $wrapper = entity_metadata_wrapper('commerce_order', $form_state['order']);
+  $line_items = $wrapper->commerce_line_items->value();
+  // Fetch the line items service related fields using the service_details
+  // view mode.
+  $view = entity_view('commerce_line_item', $line_items, 'service_details');
+  $services_details = render($view);
+  drupal_set_message(t('Service registered successfully. !details', array('!details' => $services_details)));
+}
+
+/**
+ * Custom submit handler; Redirect user to the checkout for the addons products.
+ */
+function gbmarket_add_ons_redirect_to_cart(&$form, &$form_state) {
+  $form_state['redirect'] = 'cart';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Remove the payment methods when the order total is 0.
+ */
+function gbmarket_add_ons_form_commerce_checkout_form_review_alter(&$form, &$form_state) {
+  if (empty($form_state['order'])) {
+    return;
+  }
+
+  $wrapper = entity_metadata_wrapper('commerce_order', $form_state['order']);
+  if ($wrapper->commerce_order_total->amount->value() == 0) {
+    // #access = FALSE still triggers error on example payment, so we unset the
+    // commerce_payment element.
+    unset($form['commerce_payment']);
+  }
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ *
+ * Adding the line items service-details view mode for showing the custom line
+ * item fields as a rendered entity.
+ */
+function gbmarket_add_ons_entity_info_alter(&$entity_info) {
+  $entity_info['commerce_line_item']['view modes']['service_details'] = array(
+    'label' => t('Service details'),
+    'custom settings' => TRUE,
+  );
+}
+
+/**
+ * Implements hook_views_default_views_alter().
+ *
+ * Adding a rendered line item field to commerce_line_item_table and
+ * commerce_cart_summary views for showing custom service related data.
+ */
+function gbmarket_add_ons_views_default_views_alter(&$views) {
+  if (!empty($views['commerce_line_item_table'])) {
+    _gbmarket_add_ons_add_service_details_field($views['commerce_line_item_table']);
+  }
+  if (!empty($views['commerce_cart_summary'])) {
+    _gbmarket_add_ons_add_service_details_field($views['commerce_cart_summary'], 'commerce_line_items_line_item_id');
+  }
+}
+
+/**
+ * Add the service detail field rendering extra line-item fields to a view.
+ */
+function _gbmarket_add_ons_add_service_details_field(&$view, $relationship = NULL) {
+  $handler = &$view->display['default']->handler;
+
+  /* Field: Commerce Line Item: Rendered Commerce Line item */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_commerce_line_item';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = 'Service details';
+  $handler->display->display_options['fields']['rendered_entity']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'service_details';
+
+  if ($relationship) {
+    $handler->display->display_options['fields']['rendered_entity']['relationship'] = $relationship;
+  }
+
+  // Order the fields, since we want service details after the product title.
+  $ordered_fields = array();
+  $fields = $view->display['default']->display_options['fields'];
+  if (is_array($fields)) {
+    foreach ($fields as $field_name => $field) {
+      if ($field_name == 'rendered_entity') continue;
+      if ($field_name == 'line_item_title') {
+        $ordered_fields[$field_name] = $field;
+        $ordered_fields['rendered_entity'] = $fields['rendered_entity'];
+      }
+      else {
+        $ordered_fields[$field_name] = $field;
+      }
+    }
+    $view->display['default']->display_options['fields'] = $ordered_fields;
+  }
+}

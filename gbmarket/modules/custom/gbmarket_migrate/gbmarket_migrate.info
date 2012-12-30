@@ -1,0 +1,9 @@
+name = "gbmarket migration"
+description = "Populate the gbmarket content."
+package = "gbmarket"
+core = 7.x
+dependencies[] = migrate
+dependencies[] = migrate_extras
+dependencies[] = commerce_migrate
+dependencies[] = date_migrate
+files[] = gbmarket_migrate.migrate.inc

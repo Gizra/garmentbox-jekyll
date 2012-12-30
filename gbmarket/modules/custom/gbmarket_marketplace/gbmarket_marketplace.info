@@ -1,0 +1,5 @@
+name = "gbmarket Marketplace"
+description = "Displays and handles marketplace on the gbmarket."
+core = "7.x"
+package = "gbmarket"
+dependencies[] = commerce_product

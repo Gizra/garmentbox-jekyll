@@ -1,0 +1,7 @@
+name = gbmarket module import
+description = Import module feed from drupalcommerce.org
+package = gbmarket
+core = 7.x
+
+dependencies[] = date
+dependencies[] = link

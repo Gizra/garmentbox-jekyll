@@ -1,0 +1,126 @@
+<?php
+/**
+ * @file
+ * Code for the gbmarket Jirafe feature.
+ */
+
+include_once 'gbmarket_jirafe.features.inc';
+
+/**
+ * Implements hook_commerce_line_item_type_info().
+ */
+function gbmarket_jirafe_commerce_line_item_type_info() {
+  $line_item_types = array();
+
+  $line_item_types['jirafe_service_add_on'] = array(
+    'name' => t('Jirafe service add-on'),
+    'description' => t('References Jirafe service.'),
+    'product' => TRUE,
+    'add_form_submit_value' => t('Add service'),
+    'base' => 'commerce_product_line_item',
+  );
+
+  return $line_item_types;
+}
+
+/**
+ * Implement hook_element_info_alter().
+ *
+ * Used to be able to change the two field that compose a field_link, since
+ * there is now way to change those label through the UI.
+ */
+function  gbmarket_jirafe_element_info_alter(&$type) {
+  if (isset($type['link_field'])) {
+    $type['link_field']['#process'][] = 'gbmarket_jirafe_link_field_process';
+  }
+}
+
+/**
+ * Process callback.
+ *
+ * @see gbmarket_jirafe_element_info_alter.
+ */
+function  gbmarket_jirafe_link_field_process($element, $form_state, $complete_form) {
+  switch ($element['#field_name']) {
+    case 'field_site':
+      $element['title']['#title'] = t('Site name');
+      $element['title']['#description'] = t('The name of your site.');
+      $element['url']['#title'] = t('URL');
+      break;
+  }
+  return $element;
+}
+
+/**
+ * Implements hook_commerce_order_presave().
+ *
+ * When an order containing Jirafe subscription is checked out, register the
+ * Jirafe application.
+ */
+function gbmarket_jirafe_commerce_order_presave($order) {
+  if ($order->status != 'checkout_complete') {
+    return;
+  }
+
+  $wrapper = entity_metadata_wrapper('commerce_order', $order);
+  // Get the line item wrapper. We're Assuming there's exactly one line-item per
+  // order.
+  $wrapper = $wrapper->commerce_line_items->get(0);
+  if ($wrapper->type->value() != 'jirafe_service_add_on') {
+    return;
+  }
+
+  if ($wrapper->field_token->value()) {
+    // Jirafe already registered.
+    return;
+  }
+
+  gbmarket_jirafe_create_jirafe_account($wrapper);
+
+  // Send a notification.
+  $message = message_create('jirafe_service_added', array('uid' => $order->uid));
+  $message_wrapper = entity_metadata_wrapper('message', $message);
+  $message_wrapper->field_line_item->set($wrapper->value());
+  message_notify_send_mail($message);
+}
+
+/**
+ * Register a new Jirafe application.
+ *
+ * @param
+ */
+function gbmarket_jirafe_create_jirafe_account($wrapper) {
+  global $user;
+
+  $client = new Jirafe_Client();
+  $site = $wrapper->field_site->value();
+  $application = $client->applications()->create($site['title'], $site['url'], 'drupal', '1.0.0', '0.1.0');
+  $wrapper->field_token->set($application['token']);
+  $wrapper->field_application_id->set($application['app_id']);
+  $wrapper->save();
+
+  $jirafe_resources = array(
+    'sites' => array(),
+    'users' => array(),
+  );
+
+  // Create a single site and a single user.
+  $jirafe_resources['sites'][] = array(
+    'url' => $site['url'],
+    'description' => t('Main site'),
+    'timezone' => date_default_timezone_get(),
+    'currency' => commerce_default_currency(),
+  );
+
+  $jirafe_resources['users'][] = array(
+    'email' => $wrapper->field_email->value(),
+    'first_name' => $user->name,
+  );
+
+  // Synchronize with Jirafe.
+  $client = new Jirafe_Client($application['token']);
+  $result = $client->applications($application['app_id'])->resources()->sync(
+    $jirafe_resources['sites'],
+    $jirafe_resources['users']
+  );
+}

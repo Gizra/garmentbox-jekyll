@@ -1,0 +1,53 @@
+.pane-gb-register {
+  position: absolute;
+  right: 20px; //LTR
+  top: 0;
+  width: 185px;
+  height: 311px;
+  background: url("../images/sprites.png") no-repeat -300px -225px;
+  padding: 0 25px;
+
+  h2 {
+    color: #3a4646;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 0;
+    line-height: 30px;
+  }
+
+  h3 {
+    color: #5f8985;
+    text-align: center;
+    padding-top: 0;
+    font-size: 17px;
+    margin-bottom: 0;
+  }
+
+  form {
+
+    label .form-required {
+      display: none;
+    }
+
+    .form-text {
+      width: 167px;
+    }
+
+    .form-item-mail {
+      margin-top: 6px;
+    }
+
+    #edit-actions {
+      text-align: center;
+
+      input {
+        margin-right: 0; //LTR
+        font-size: 19px;
+      }
+    }
+  }
+
+  .pane-content {
+    padding: 0;
+  }
+}

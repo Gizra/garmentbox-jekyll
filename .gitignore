@@ -1,0 +1,20 @@
+# Ignore configuration files that may contain sensitive information.
+sites/default/settings.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+# Contribs
+gbmarket/modules/contrib/*
+gbmarket/themes/contrib/*
+gbmarket/1
+gbmarket/libraries
+www
+
+# SASS
+gbmarket/themes/gbmarkettheme/.sass-cache/*
+
+#Aptana
+.project
+.settings/*

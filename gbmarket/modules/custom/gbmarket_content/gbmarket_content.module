@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the gbmarket content feature.
+ */
+
+include_once 'gbmarket_content.features.inc';

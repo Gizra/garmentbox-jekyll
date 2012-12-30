@@ -1,0 +1,6 @@
+<?php
+/**
+ * @file
+ */
+
+include_once 'gbmarket_services.features.inc';

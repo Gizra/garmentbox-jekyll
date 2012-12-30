@@ -19,7 +19,6 @@ dependencies[] = help
 dependencies[] = image
 dependencies[] = i18n
 dependencies[] = list
-dependencies[] = markdown
 dependencies[] = menu
 dependencies[] = module_filter
 dependencies[] = number
@@ -38,9 +37,7 @@ dependencies[] = taxonomy
 dependencies[] = views
 dependencies[] = views_content
 dependencies[] = views_ui
-dependencies[] = views_slideshow
 dependencies[] = views_content
-dependencies[] = views_slideshow_cycle
 dependencies[] = panels
 dependencies[] = page_manager
 dependencies[] = entityreference
@@ -48,6 +45,8 @@ dependencies[] = date
 dependencies[] = panels_mini
 dependencies[] = r4032login
 dependencies[] = hint
+dependencies[] = fontyourface
+dependencies[] = local_fonts
 
 ; Commerce modules.
 dependencies[] = commerce
@@ -73,6 +72,7 @@ dependencies[] = rest_server
 dependencies[] = mimemail_compress
 
 ; Custom gbmarket modules
+dependencies[] = gbmarket_general
 dependencies[] = gbmarket_user_auth
 dependencies[] = gbmarket_content
 dependencies[] = gbmarket_pages

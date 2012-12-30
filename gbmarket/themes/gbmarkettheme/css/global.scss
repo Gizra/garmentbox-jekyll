@@ -34,8 +34,8 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Verdana, Helvetica, Arial, sans-serif;
+h1, h2, h3, h4, h5, h6, * {
+  font-family: "Neo sans", Arial;
 }
 
 h2 {
@@ -53,10 +53,10 @@ ul li.leaf, ul li.collapsed {
   list-style-type: none;
   list-style-image: none;
   padding: 0;
-  margin: 0 15px 0 0; // LTR
+  margin: 0 15px 0 0; //LTR
 
   &.last {
-    margin-right: 0; // LTR
+    margin-right: 0; //LTR
   }
 }
 

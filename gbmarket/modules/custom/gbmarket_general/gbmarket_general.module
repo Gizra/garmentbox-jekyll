@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the GBMarket general feature.
+ */
+
+include_once 'gbmarket_general.features.inc';

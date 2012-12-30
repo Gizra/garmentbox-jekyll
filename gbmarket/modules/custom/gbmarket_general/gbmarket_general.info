@@ -1,0 +1,10 @@
+name = GBMarket general
+core = 7.x
+package = gbmarket
+php = 5.2.4
+dependencies[] = features
+dependencies[] = fontyourface
+dependencies[] = local_fonts
+features[features_api][] = api:1
+features[fontyourface][] = Dosis normal normal
+features[fontyourface][] = Neo Sans normal normal

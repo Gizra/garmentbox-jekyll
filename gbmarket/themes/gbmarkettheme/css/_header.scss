@@ -7,6 +7,11 @@
     margin-top: 11px;
   }
 
+  a {
+    font-size: 14px;
+    @include dosis;
+  }
+
   .block-main-menu, .block-user-menu {
     float: right; //LTR
 

@@ -66,6 +66,7 @@
     color: #faffff;
     text-shadow: #323230 0 1px 1px;
     font-weight: bold;
+    font-size: 20px;
   }
 }
 
@@ -76,4 +77,16 @@
   span, input {
     @include button-gradient-alter;
   }
+}
+
+@mixin dosis {
+  font-family: "Dosis", Arial, Verdana, Helvetica, sans-serif;
+}
+
+@mixin neo-sans {
+  font-family: "Neo Sans", Arial, Verdana, Helvetica, sans-serif;
+}
+
+@mixin arial {
+  font-family: Arial, Verdana, Helvetica, sans-serif;
 }

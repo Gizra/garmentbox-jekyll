@@ -9,6 +9,14 @@ form {
     @include input-background;
   }
 
+  input {
+    @include arial;
+
+    &.form-submit {
+      @include neo-sans;
+    }
+  }
+
   span.button {
     @include alter-button;
   }

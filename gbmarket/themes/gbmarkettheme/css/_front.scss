@@ -25,18 +25,20 @@
 
       h2 {
         font-size: 50px;
-        line-height: 50px;
+        line-height: 52px;
         color: #dce4e6;
         font-weight: normal;
         padding-top: 0;
+        @include dosis;
       }
 
       .field-content p {
         font-size: 20px;
+        line-height: 24px;
         font-weight: bold;
         color: #a2c4c5;
         margin-bottom: 30px;
-
+        @include neo-sans;
       }
     }
   }
@@ -51,9 +53,13 @@
     }
 
     .views-row {
-      width: 33%;
+      width: 30%;
       float: left; //LTR
       padding: 0;
+
+      &.views-row-2 {
+        width: 40%;
+      }
 
       .field-content {
 
@@ -91,13 +97,18 @@
         h3 {
           text-align: center;
           color: #484848;
-          font-size: 30px;
+          font-size: 37px;
+          @include dosis;
         }
 
         p {
           text-align: center;
           color: #9bc3c5;
-          font-size: 17px;
+          font-size: 18px;
+          line-height: 24px;
+          @include dosis;
+          width: 254px;
+          margin: 0 auto;
         }
       }
     }
@@ -116,7 +127,8 @@
       margin: 0;
       color: #dedede;
       font-weight: bold;
-      font-size: 20px;
+      @include dosis;
+      font-size: 23px;
       line-height: 45px;
       text-shadow: #393536 0 1px 1px;
     }
@@ -142,7 +154,7 @@
       text-align: center;
       color: #512d3b;
       font-weight: normal;
-      font-size: 30px;
+      font-size: 37px;
       margin-bottom: 36px;
     }
 
@@ -178,16 +190,18 @@
       .views-field-title a {
         color: #c0436f;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 29px;
       }
 
       .views-field-field-subtitle {
         font-weight: bold;
-        font-size: 12px;
+        font-size: 13px;
+        @include arial;
       }
 
       .views-field-body {
         font-size: 12px;
+        @include arial;
       }
     }
   }

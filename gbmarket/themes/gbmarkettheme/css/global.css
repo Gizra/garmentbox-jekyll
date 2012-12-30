@@ -6,6 +6,10 @@
   float: left;
   margin-top: 11px;
 }
+#section-header a {
+  font-size: 14px;
+  font-family: "Dosis", Arial, Verdana, Helvetica, sans-serif;
+}
 #section-header .block-main-menu, #section-header .block-user-menu {
   float: right;
 }
@@ -50,16 +54,19 @@
 }
 .front .panel-col-top .views-row-first h2 {
   font-size: 50px;
-  line-height: 50px;
+  line-height: 52px;
   color: #dce4e6;
   font-weight: normal;
   padding-top: 0;
+  font-family: "Dosis", Arial, Verdana, Helvetica, sans-serif;
 }
 .front .panel-col-top .views-row-first .field-content p {
   font-size: 20px;
+  line-height: 24px;
   font-weight: bold;
   color: #a2c4c5;
   margin-bottom: 30px;
+  font-family: "Neo Sans", Arial, Verdana, Helvetica, sans-serif;
 }
 .front .panel-col-center {
   background: url("../images/bg-paper.png") repeat-x;
@@ -70,9 +77,12 @@
   display: none;
 }
 .front .panel-col-center .views-row {
-  width: 33%;
+  width: 30%;
   float: left;
   padding: 0;
+}
+.front .panel-col-center .views-row.views-row-2 {
+  width: 40%;
 }
 .front .panel-col-center .views-row .field-content .circle {
   width: 108px;
@@ -104,12 +114,17 @@
 .front .panel-col-center .views-row .field-content h3 {
   text-align: center;
   color: #484848;
-  font-size: 30px;
+  font-size: 37px;
+  font-family: "Dosis", Arial, Verdana, Helvetica, sans-serif;
 }
 .front .panel-col-center .views-row .field-content p {
   text-align: center;
   color: #9bc3c5;
-  font-size: 17px;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "Dosis", Arial, Verdana, Helvetica, sans-serif;
+  width: 254px;
+  margin: 0 auto;
 }
 .front .panel-col-center2 {
   background: url("../images/bg-opensource.png") repeat-x;
@@ -123,7 +138,8 @@
   margin: 0;
   color: #dedede;
   font-weight: bold;
-  font-size: 20px;
+  font-family: "Dosis", Arial, Verdana, Helvetica, sans-serif;
+  font-size: 23px;
   line-height: 45px;
   text-shadow: #393536 0 1px 1px;
 }
@@ -144,7 +160,7 @@
   text-align: center;
   color: #512d3b;
   font-weight: normal;
-  font-size: 30px;
+  font-size: 37px;
   margin-bottom: 36px;
 }
 .front .pane-homepage-sections-panel-pane-homepage-sections .views-row {
@@ -175,14 +191,16 @@
 .front .pane-homepage-sections-panel-pane-homepage-sections .views-row .views-field-title a {
   color: #c0436f;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 29px;
 }
 .front .pane-homepage-sections-panel-pane-homepage-sections .views-row .views-field-field-subtitle {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 13px;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
 }
 .front .pane-homepage-sections-panel-pane-homepage-sections .views-row .views-field-body {
   font-size: 12px;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
 }
 
 #messages {
@@ -245,7 +263,7 @@
   color: #5f8985;
   text-align: center;
   padding-top: 0;
-  font-size: 17px;
+  font-size: 20px;
   margin-bottom: 0;
 }
 .pane-gb-register form label .form-required {
@@ -262,7 +280,7 @@
 }
 .pane-gb-register form #edit-actions input {
   margin-right: 0;
-  font-size: 19px;
+  font-size: 16px;
 }
 .pane-gb-register .pane-content {
   padding: 0;
@@ -282,6 +300,12 @@ form .form-text {
   background: -ms-linear-gradient(top, #f2f2f2 0%, white 33%, #fffefd 89%, #fbffff 93%, #fffffb 96%, #fffffd 100%);
   background: linear-gradient(to bottom, #f2f2f2 0%, #ffffff 33%, #fffefd 89%, #fbffff 93%, #fffffb 96%, #fffffd 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#fffffd',GradientType=0 );
+}
+form input {
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+form input.form-submit {
+  font-family: "Neo Sans", Arial, Verdana, Helvetica, sans-serif;
 }
 form span.button {
   text-decoration: none;
@@ -313,6 +337,7 @@ form span.button span, form span.button input {
   color: #faffff;
   text-shadow: #323230 0 1px 1px;
   font-weight: bold;
+  font-size: 20px;
 }
 form span.button span, form span.button input {
   background: #e9bdcc;
@@ -351,8 +376,8 @@ body .pane-content {
   padding: 0 16px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Verdana, Helvetica, Arial, sans-serif;
+h1, h2, h3, h4, h5, h6, * {
+  font-family: "Neo sans", Arial;
 }
 
 h2 {
@@ -409,6 +434,7 @@ a.button span, a.button input {
   color: #faffff;
   text-shadow: #323230 0 1px 1px;
   font-weight: bold;
+  font-size: 20px;
 }
 a.button.alter {
   text-decoration: none;
@@ -440,6 +466,7 @@ a.button.alter span, a.button.alter input {
   color: #faffff;
   text-shadow: #323230 0 1px 1px;
   font-weight: bold;
+  font-size: 20px;
 }
 a.button.alter span, a.button.alter input {
   background: #e9bdcc;

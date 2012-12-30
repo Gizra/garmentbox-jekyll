@@ -179,6 +179,9 @@ projects[views_bulk_operations][subdir] = "contrib"
 projects[hint][version] = "1.2"
 projects[hint][subdir] = "contrib"
 
+projects[fontyourface][version] = "2.6"
+projects[fontyourface][subdir] = "contrib"
+
 ; No stable release yet.
 projects[openid_sso_provider][version] = "1.x-dev"
 projects[openid_sso_provider][subdir] = "contrib"

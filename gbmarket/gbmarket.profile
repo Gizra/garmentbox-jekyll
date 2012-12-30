@@ -38,7 +38,6 @@ function gbmarket_import_data() {
 
   $migrations = migrate_migrations();
 
-  $operations[] = array('_gbmarket_create_terms', array(t('Creating taxonomy terms.')));
   $operations[] = array('_gbmarket_create_main_menu', array(t('Building main menu.')));
   $operations[] = array('_gbmarket_create_submenu_hosting', array(t('Building hosting sub-menu.')));
   $operations[] = array('_gbmarket_update_blocks', array(t('Update blocks settings.')));

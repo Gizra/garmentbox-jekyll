@@ -1,7 +1,0 @@
-name = Services Search API
-description = Exposes Search API indexes to Services.
-package = Services
-core = 7.x
-dependencies[] = services
-dependencies[] = services_entity
-dependencies[] = search_api

@@ -1,5 +1,0 @@
-name = Entity Rendered
-description = Add a property to access the rendered version of an entity.
-core = 7.x
-
-dependencies[] = entity

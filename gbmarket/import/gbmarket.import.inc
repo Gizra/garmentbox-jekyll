@@ -110,60 +110,6 @@ function _gbmarket_create_submenu_hosting() {
 /**
  * BatchAPI callback.
  *
- * Create taxonomy terms.
- * @see gbmarket_import_data().
- */
-function _gbmarket_create_terms() {
-  // Create audience types terms.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('audience_types');
-  $term = array(
-    'name' => 'Site builders',
-    'vid' => $vocabulary->vid,
-  );
-  taxonomy_term_save((object)$term);
-
-  $term = array(
-    'name' => 'Project managers',
-    'vid' => $vocabulary->vid,
-  );
-  taxonomy_term_save((object)$term);
-
-  $term = array(
-    'name' => 'Developers',
-    'vid' => $vocabulary->vid,
-  );
-  taxonomy_term_save((object)$term);
-
-  // Create add-on categories terms.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('add_on_category');
-  $term = array(
-    'name' => 'Shipping',
-    'vid' => $vocabulary->vid,
-  );
-  taxonomy_term_save((object)$term);
-
-  $term = array(
-    'name' => 'Payment',
-    'vid' => $vocabulary->vid,
-  );
-  taxonomy_term_save((object)$term);
-
-  $term = array(
-    'name' => 'Administrative',
-    'vid' => $vocabulary->vid,
-  );
-  taxonomy_term_save((object)$term);
-
-  $term = array(
-    'name' => 'Analytics',
-    'vid' => $vocabulary->vid,
-  );
-  taxonomy_term_save((object)$term);
-}
-
-/**
- * BatchAPI callback.
- *
  * Update blocks settings.
  * @see gbmarket_import_data().
  */

@@ -1,8 +1,0 @@
-name = Services Entity
-description = Exposes entities to the Service API.
-package = Services
-core = 7.x
-dependencies[] = services
-dependencies[] = entity
-
-files[] = tests/services_entity.test

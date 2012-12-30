@@ -6,7 +6,6 @@ version = 7.x-1.0-dev
 project = gbmarket_pages
 dependencies[] = ctools
 dependencies[] = features
-dependencies[] = gbmarket_services
 dependencies[] = image
 dependencies[] = list
 dependencies[] = menu

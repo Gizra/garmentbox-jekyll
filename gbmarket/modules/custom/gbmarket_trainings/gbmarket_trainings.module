@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the gbmarket trainings feature.
- */
-
-include_once 'gbmarket_trainings.features.inc';

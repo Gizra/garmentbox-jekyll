@@ -61,38 +61,6 @@ function gbmarket_marketplace_api_default_search_api_server() {
       "database" : "default:default",
       "min_chars" : "1",
       "indexes" : {
-        "products" : {
-          "sku" : {
-            "table" : "search_api_db_products_sku",
-            "type" : "string",
-            "boost" : "1.0"
-          },
-          "type" : {
-            "table" : "search_api_db_products_type",
-            "type" : "string",
-            "boost" : "1.0"
-          },
-          "title" : {
-            "table" : "search_api_db_products_title",
-            "type" : "text",
-            "boost" : "1.0"
-          },
-          "created" : {
-            "table" : "search_api_db_products_created",
-            "type" : "date",
-            "boost" : "1.0"
-          },
-          "changed" : {
-            "table" : "search_api_db_products_changed",
-            "type" : "date",
-            "boost" : "1.0"
-          },
-          "search_api_language" : {
-            "table" : "search_api_db_products_search_api_language",
-            "type" : "string",
-            "boost" : "1.0"
-          }
-        },
         "productdisplay" : {
           "title" : {
             "table" : "search_api_db_productdisplay_title",
@@ -127,6 +95,38 @@ function gbmarket_marketplace_api_default_search_api_server() {
           "field_product:status" : {
             "table" : "search_api_db_productdisplay_field_product_status",
             "type" : "boolean",
+            "boost" : "1.0"
+          }
+        },
+        "products" : {
+          "sku" : {
+            "table" : "search_api_db_products_sku",
+            "type" : "string",
+            "boost" : "1.0"
+          },
+          "type" : {
+            "table" : "search_api_db_products_type",
+            "type" : "string",
+            "boost" : "1.0"
+          },
+          "title" : {
+            "table" : "search_api_db_products_title",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "created" : {
+            "table" : "search_api_db_products_created",
+            "type" : "date",
+            "boost" : "1.0"
+          },
+          "changed" : {
+            "table" : "search_api_db_products_changed",
+            "type" : "date",
+            "boost" : "1.0"
+          },
+          "search_api_language" : {
+            "table" : "search_api_db_products_search_api_language",
+            "type" : "string",
             "boost" : "1.0"
           }
         }

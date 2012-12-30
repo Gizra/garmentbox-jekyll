@@ -784,7 +784,7 @@ function gbmarket_pages_default_page_manager_pages() {
     $pane->pid = 'new-20';
     $pane->panel = 'center3';
     $pane->type = 'views_panes';
-    $pane->subtype = 'homepage_sections-panel_homepage_sections';
+    $pane->subtype = 'homepage_sections-panel_pane_homepage_sections';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();

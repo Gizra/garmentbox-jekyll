@@ -137,17 +137,17 @@
 .front .panel-col-center3 .pane-custom p {
   text-align: center;
 }
-.front .pane-homepage-sections-panel-homepage-sections {
+.front .pane-homepage-sections-panel-pane-homepage-sections {
   padding-top: 20px;
 }
-.front .pane-homepage-sections-panel-homepage-sections h2 {
+.front .pane-homepage-sections-panel-pane-homepage-sections h2 {
   text-align: center;
   color: #512d3b;
   font-weight: normal;
   font-size: 30px;
   margin-bottom: 36px;
 }
-.front .pane-homepage-sections-panel-homepage-sections .views-row {
+.front .pane-homepage-sections-panel-pane-homepage-sections .views-row {
   float: left;
   width: 206px;
   height: 174px;
@@ -156,32 +156,32 @@
   margin-right: 17px;
   padding: 33px 22px 0;
 }
-.front .pane-homepage-sections-panel-homepage-sections .views-row .section {
+.front .pane-homepage-sections-panel-pane-homepage-sections .views-row .section {
   height: 157px;
   background: url("../images/add-ons.png") no-repeat bottom;
 }
-.front .pane-homepage-sections-panel-homepage-sections .views-row.views-row-2 .section {
+.front .pane-homepage-sections-panel-pane-homepage-sections .views-row.views-row-2 .section {
   background-image: url("../images/services.png");
   background-position: center;
 }
-.front .pane-homepage-sections-panel-homepage-sections .views-row.views-row-3 .section {
+.front .pane-homepage-sections-panel-pane-homepage-sections .views-row.views-row-3 .section {
   background-image: url("../images/support.png");
   background-position: center;
 }
-.front .pane-homepage-sections-panel-homepage-sections .views-row.views-row-4 .section {
+.front .pane-homepage-sections-panel-pane-homepage-sections .views-row.views-row-4 .section {
   background-image: url("../images/training.png");
   background-position: center;
 }
-.front .pane-homepage-sections-panel-homepage-sections .views-row .views-field-title a {
+.front .pane-homepage-sections-panel-pane-homepage-sections .views-row .views-field-title a {
   color: #c0436f;
   text-decoration: none;
   font-size: 25px;
 }
-.front .pane-homepage-sections-panel-homepage-sections .views-row .views-field-field-subtitle {
+.front .pane-homepage-sections-panel-pane-homepage-sections .views-row .views-field-field-subtitle {
   font-weight: bold;
   font-size: 12px;
 }
-.front .pane-homepage-sections-panel-homepage-sections .views-row .views-field-body {
+.front .pane-homepage-sections-panel-pane-homepage-sections .views-row .views-field-body {
   font-size: 12px;
 }
 

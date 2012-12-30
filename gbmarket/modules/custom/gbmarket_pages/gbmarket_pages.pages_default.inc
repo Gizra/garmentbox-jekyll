@@ -828,7 +828,21 @@ function gbmarket_pages_default_page_manager_pages() {
     $pane->type = 'gb_register';
     $pane->subtype = 'gb_register';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    );
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',

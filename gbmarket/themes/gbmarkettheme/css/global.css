@@ -125,6 +125,7 @@
   color: #484848;
   font-size: 37px;
   font-family: "Dosis", Arial, Verdana, Helvetica, sans-serif;
+  margin-bottom: 0;
 }
 .front .panel-col-center .views-row .field-content p {
   text-align: center;
@@ -132,7 +133,7 @@
   font-size: 18px;
   line-height: 24px;
   font-family: "Dosis", Arial, Verdana, Helvetica, sans-serif;
-  width: 254px;
+  width: 260px;
   margin: 0 auto;
 }
 .front .panel-col-center2 {
@@ -323,7 +324,7 @@ form input.form-submit {
 }
 form span.button {
   text-decoration: none;
-  padding: 3px;
+  padding: 4px;
   box-shadow: 0 1px 1px 1px #223134 inset;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -367,7 +368,7 @@ form span.button span, form span.button input {
 }
 form span.button:hover {
   text-decoration: none;
-  padding: 3px;
+  padding: 4px;
   box-shadow: 0 1px 1px 1px #223134 inset;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -467,7 +468,7 @@ ul li.leaf.last, ul li.collapsed.last {
 
 a.button {
   text-decoration: none;
-  padding: 3px;
+  padding: 4px;
   box-shadow: 0 1px 1px 1px #223134 inset;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -500,7 +501,7 @@ a.button span, a.button input {
 }
 a.button.alter {
   text-decoration: none;
-  padding: 3px;
+  padding: 4px;
   box-shadow: 0 1px 1px 1px #223134 inset;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;

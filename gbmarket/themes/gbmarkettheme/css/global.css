@@ -188,15 +188,15 @@
 }
 .front .pane-homepage-sections-panel-pane-homepage-sections .views-row.views-row-2 .section {
   background-image: url("../images/services.png");
-  background-position: center;
+  background-position: 50% 42px;
 }
 .front .pane-homepage-sections-panel-pane-homepage-sections .views-row.views-row-3 .section {
   background-image: url("../images/support.png");
-  background-position: center;
+  background-position: 50% 42px;
 }
 .front .pane-homepage-sections-panel-pane-homepage-sections .views-row.views-row-4 .section {
   background-image: url("../images/training.png");
-  background-position: center;
+  background-position: 50% 42px;
 }
 .front .pane-homepage-sections-panel-pane-homepage-sections .views-row .views-field-title a {
   color: #c0436f;

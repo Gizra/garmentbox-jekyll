@@ -19,5 +19,9 @@ form {
 
   span.button {
     @include alter-button;
+
+    &:hover {
+      @include alter-button;
+    }
   }
 }

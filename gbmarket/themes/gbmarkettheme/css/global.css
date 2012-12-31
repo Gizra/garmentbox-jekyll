@@ -354,6 +354,50 @@ form span.button span, form span.button input {
   background: linear-gradient(to bottom, #e9bdcc 0%, #d06488 3%, #cc5f86 5%, #cb527d 11%, #c34471 19%, #c33f6e 32%, #c83b6f 35%, #c14372 38%, #c33d6f 41%, #c63c6d 43%, #bb446e 46%, #c14470 49%, #c9396c 51%, #c2406e 54%, #be416d 57%, #c5406f 59%, #c2406e 62%, #cb3d6f 65%, #be436f 68%, #c23e6d 70%, #be416d 73%, #c33f6e 76%, #c33f6e 78%, #bb3e6a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9bdcc', endColorstr='#bb3e6a',GradientType=0 );
 }
+form span.button:hover {
+  text-decoration: none;
+  padding: 3px;
+  box-shadow: 0 1px 1px 1px #223134 inset;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 0 1px 1px 1px #a4acae inset;
+}
+form span.button:hover span, form span.button:hover input {
+  display: inline-block;
+  padding: 11px;
+  cursor: pointer;
+  background-color: #3fc3c5;
+  border: 1px solid #323230;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  background: #bfebec;
+  background: -moz-linear-gradient(top, #bfebec 0%, #66cfd2 3%, #5ed1ce 5%, #49c9c8 16%, #40c6c7 24%, #40c6c7 76%, #3cc0c2 92%, #3dc2c1 95%, #3bbbbc 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bfebec), color-stop(3%, #66cfd2), color-stop(5%, #5ed1ce), color-stop(16%, #49c9c8), color-stop(24%, #40c6c7), color-stop(76%, #40c6c7), color-stop(92%, #3cc0c2), color-stop(95%, #3dc2c1), color-stop(100%, #3bbbbc));
+  background: -webkit-linear-gradient(top, #bfebec 0%, #66cfd2 3%, #5ed1ce 5%, #49c9c8 16%, #40c6c7 24%, #40c6c7 76%, #3cc0c2 92%, #3dc2c1 95%, #3bbbbc 100%);
+  background: -o-linear-gradient(top, #bfebec 0%, #66cfd2 3%, #5ed1ce 5%, #49c9c8 16%, #40c6c7 24%, #40c6c7 76%, #3cc0c2 92%, #3dc2c1 95%, #3bbbbc 100%);
+  background: -ms-linear-gradient(top, #bfebec 0%, #66cfd2 3%, #5ed1ce 5%, #49c9c8 16%, #40c6c7 24%, #40c6c7 76%, #3cc0c2 92%, #3dc2c1 95%, #3bbbbc 100%);
+  background: linear-gradient(to bottom, #bfebec 0%, #66cfd2 3%, #5ed1ce 5%, #49c9c8 16%, #40c6c7 24%, #40c6c7 76%, #3cc0c2 92%, #3dc2c1 95%, #3bbbbc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfebec', endColorstr='#3bbbbc',GradientType=0 );
+  color: #faffff;
+  text-shadow: #323230 0 1px 1px;
+  font-weight: bold;
+  font-size: 20px;
+}
+form span.button:hover span, form span.button:hover input {
+  background: #e9bdcc;
+  background: -moz-linear-gradient(top, #e9bdcc 0%, #d06488 3%, #cc5f86 5%, #cb527d 11%, #c34471 19%, #c33f6e 32%, #c83b6f 35%, #c14372 38%, #c33d6f 41%, #c63c6d 43%, #bb446e 46%, #c14470 49%, #c9396c 51%, #c2406e 54%, #be416d 57%, #c5406f 59%, #c2406e 62%, #cb3d6f 65%, #be436f 68%, #c23e6d 70%, #be416d 73%, #c33f6e 76%, #c33f6e 78%, #bb3e6a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9bdcc), color-stop(3%, #d06488), color-stop(5%, #cc5f86), color-stop(11%, #cb527d), color-stop(19%, #c34471), color-stop(32%, #c33f6e), color-stop(35%, #c83b6f), color-stop(38%, #c14372), color-stop(41%, #c33d6f), color-stop(43%, #c63c6d), color-stop(46%, #bb446e), color-stop(49%, #c14470), color-stop(51%, #c9396c), color-stop(54%, #c2406e), color-stop(57%, #be416d), color-stop(59%, #c5406f), color-stop(62%, #c2406e), color-stop(65%, #cb3d6f), color-stop(68%, #be436f), color-stop(70%, #c23e6d), color-stop(73%, #be416d), color-stop(76%, #c33f6e), color-stop(78%, #c33f6e), color-stop(100%, #bb3e6a));
+  background: -webkit-linear-gradient(top, #e9bdcc 0%, #d06488 3%, #cc5f86 5%, #cb527d 11%, #c34471 19%, #c33f6e 32%, #c83b6f 35%, #c14372 38%, #c33d6f 41%, #c63c6d 43%, #bb446e 46%, #c14470 49%, #c9396c 51%, #c2406e 54%, #be416d 57%, #c5406f 59%, #c2406e 62%, #cb3d6f 65%, #be436f 68%, #c23e6d 70%, #be416d 73%, #c33f6e 76%, #c33f6e 78%, #bb3e6a 100%);
+  background: -o-linear-gradient(top, #e9bdcc 0%, #d06488 3%, #cc5f86 5%, #cb527d 11%, #c34471 19%, #c33f6e 32%, #c83b6f 35%, #c14372 38%, #c33d6f 41%, #c63c6d 43%, #bb446e 46%, #c14470 49%, #c9396c 51%, #c2406e 54%, #be416d 57%, #c5406f 59%, #c2406e 62%, #cb3d6f 65%, #be436f 68%, #c23e6d 70%, #be416d 73%, #c33f6e 76%, #c33f6e 78%, #bb3e6a 100%);
+  background: -ms-linear-gradient(top, #e9bdcc 0%, #d06488 3%, #cc5f86 5%, #cb527d 11%, #c34471 19%, #c33f6e 32%, #c83b6f 35%, #c14372 38%, #c33d6f 41%, #c63c6d 43%, #bb446e 46%, #c14470 49%, #c9396c 51%, #c2406e 54%, #be416d 57%, #c5406f 59%, #c2406e 62%, #cb3d6f 65%, #be436f 68%, #c23e6d 70%, #be416d 73%, #c33f6e 76%, #c33f6e 78%, #bb3e6a 100%);
+  background: linear-gradient(to bottom, #e9bdcc 0%, #d06488 3%, #cc5f86 5%, #cb527d 11%, #c34471 19%, #c33f6e 32%, #c83b6f 35%, #c14372 38%, #c33d6f 41%, #c63c6d 43%, #bb446e 46%, #c14470 49%, #c9396c 51%, #c2406e 54%, #be416d 57%, #c5406f 59%, #c2406e 62%, #cb3d6f 65%, #be436f 68%, #c23e6d 70%, #be416d 73%, #c33f6e 76%, #c33f6e 78%, #bb3e6a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9bdcc', endColorstr='#bb3e6a',GradientType=0 );
+}
 
 .container-12 {
   width: 1100px !important;

@@ -256,10 +256,9 @@
   position: absolute;
   right: 20px;
   top: 0;
-  width: 185px;
+  width: 235px;
   height: 311px;
   background: url("../images/sprites.png") no-repeat -300px -225px;
-  padding: 0 25px;
 }
 .pane-gb-register h2 {
   color: #3a4646;
@@ -277,6 +276,9 @@
 }
 .pane-gb-register form label .form-required {
   display: none;
+}
+.pane-gb-register form .form-item {
+  text-align: center;
 }
 .pane-gb-register form .form-text {
   width: 167px;

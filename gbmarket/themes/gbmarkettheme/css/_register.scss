@@ -31,6 +31,10 @@
 
     .form-text {
       width: 167px;
+
+      &.hint-enabled {
+        width: 183px;
+      }
     }
 
     .form-item-mail {

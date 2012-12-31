@@ -52,11 +52,13 @@
 
 @mixin button {
   text-decoration: none;
-  padding: 16px 3px;
+  padding: 3px;
   box-shadow: 0 1px 1px 1px #223134 inset;
   @include rounded-corners(4px);
+  display: inline-block;
 
   span, input {
+    display: inline-block;
     padding: 11px;
     cursor: pointer;
     background-color: #3fc3c5;

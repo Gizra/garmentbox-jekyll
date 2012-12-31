@@ -267,6 +267,7 @@
   font-size: 28px;
   margin-bottom: 0;
   line-height: 30px;
+  font-weight: bold;
 }
 .pane-gb-register h3 {
   color: #5f8985;
@@ -275,7 +276,7 @@
   font-size: 20px;
   margin-bottom: 0;
 }
-.pane-gb-register form label .form-required {
+.pane-gb-register form label {
   display: none;
 }
 .pane-gb-register form .form-item {

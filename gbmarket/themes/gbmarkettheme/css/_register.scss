@@ -12,6 +12,7 @@
     font-size: 28px;
     margin-bottom: 0;
     line-height: 30px;
+    font-weight: bold;
   }
 
   h3 {
@@ -24,7 +25,7 @@
 
   form {
 
-    label .form-required {
+    label {
       display: none;
     }
 

@@ -199,6 +199,8 @@ function gbmarket_install() {
   // Use the administration theme when editing or creating content.
   variable_set('node_admin_theme', TRUE);
 
+  variable_set('user_email_verification', FALSE);
+
   // Set the contact form address.
   $data = contact_load(1);
   $data['recipients'] = 'brice@gizra.com';

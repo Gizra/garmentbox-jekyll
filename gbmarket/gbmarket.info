@@ -69,7 +69,6 @@ dependencies[] = oauth_common_providerui
 dependencies[] = services_oauth
 dependencies[] = libraries
 dependencies[] = rest_server
-dependencies[] = mimemail_compress
 
 ; Custom gbmarket modules
 dependencies[] = gbmarket_general

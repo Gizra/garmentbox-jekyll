@@ -1,8 +1,8 @@
 Language,Title,Body,Sub-menu,Images,Path,Subtitle,Status
-en,GarmentBox Support,support.html,,acquia.png; commerce-guys.png; document.png; envelope-gray.png,support,"Problems aren't problems when you have knowkedgeable help. Plan ahead to keep your store available, attractive and effective."
-en,GarmentBox Platform,hosting.html,menu-submenu-hosting,package-domain.png; package-ssl.png; package-payment.png; package-search.png; package-emails.png; package-analytics.png,garmentbox-platform
-en,GarmentBox Platform,hosting_features.html,menu-submenu-hosting,platform-clouds.jpg,garmentbox-platform/features,Where Drupal Commerce stores thrive,0
-en,GarmentBox Platform,hosting_howitworks.html,menu-submenu-hosting,icon1.jpg; icon2.jpg; icon3.jpg; icon4.jpg; icon5.jpg; icon6.jpg; icon3.jpg; icon4.jpg; cloud.jpg,garmentbox-platform/how-it-works,What makes it so great?,0
+en,GarmentBox Support,support.html,,,support,"Problems aren't problems when you have knowkedgeable help. Plan ahead to keep your store available, attractive and effective."
+en,GarmentBox Platform,hosting.html,menu-submenu-hosting,,garmentbox-platform
+en,GarmentBox Platform,hosting_features.html,menu-submenu-hosting,,garmentbox-platform/features,Where Drupal Commerce stores thrive,0
+en,GarmentBox Platform,hosting_howitworks.html,menu-submenu-hosting,,garmentbox-platform/how-it-works,What makes it so great?,0
 en,Platform plans,hosting_plans.html,menu-submenu-hosting,,garmentbox-platform/hosting-plans,Say something meaningful about how this is way different than anything else.,0
 en,Terms of Service,terms_of_service.html,,,terms-of-service
 en,Not found,,,,not-found,Oops nothing to see out there !

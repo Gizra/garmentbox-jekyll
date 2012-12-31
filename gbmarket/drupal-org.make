@@ -112,7 +112,6 @@ projects[nodequeue][subdir] = "contrib"
 projects[nodequeue][version] = "2.0-beta1"
 
 projects[link][subdir] = "contrib"
-; Unable to downgrade to 1.0.
 projects[link][version] = "1.x-dev"
 
 projects[migrate][version] = 2.4
@@ -146,17 +145,8 @@ projects[token][subdir] = "contrib"
 projects[mailsystem][version] = 2.34
 projects[mailsystem][subdir] = "contrib"
 
-projects[mimemail][version] = 1.0-alpha1
-; Cannot upgrade to 1.0-alpha2.
-projects[mimemail][subdir] = "contrib"
-projects[mimemail][patch][] = "http://drupal.org/files/rules-1585546-1-moving_rules_actions.patch"
-projects[mimemail][patch][] = "http://drupal.org/files/compress_install_missing_value.patch"
-
 projects[email][version] = "1.2"
 projects[email][subdir] = "contrib"
-
-projects[webform][version] = "3.18"
-projects[webform][subdir] = "contrib"
 
 projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = "contrib"
@@ -170,9 +160,6 @@ projects[logintoboggan][subdir] = "contrib"
 projects[commerce_addressbook][version] = "2.0-rc2"
 projects[commerce_addressbook][subdir] = "contrib"
 
-projects[google_analytics][version] = "1.2"
-projects[google_analytics][subdir] = "contrib"
-
 projects[views_bulk_operations][version] = "3.0"
 projects[views_bulk_operations][subdir] = "contrib"
 
@@ -181,10 +168,6 @@ projects[hint][subdir] = "contrib"
 
 projects[fontyourface][version] = "2.6"
 projects[fontyourface][subdir] = "contrib"
-
-; No stable release yet.
-projects[openid_sso_provider][version] = "1.x-dev"
-projects[openid_sso_provider][subdir] = "contrib"
 
 ; Themes
 projects[omega][subdir] = "contrib"

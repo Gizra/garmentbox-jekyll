@@ -40,29 +40,38 @@
   top: 0;
 }
 .front .panel-col-top {
-  background: url("../images/bg-front-sides.png");
-  height: 508px;
+  background: url("../images/bg-poster-texture.jpg") repeat-x;
+  height: 506px;
 }
-.front .panel-col-top .container-12 {
-  height: 508px;
-  background: url("../images/bg-front.jpg") no-repeat;
+.front .panel-col-top .container-wrapper {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MiUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMyIvPgogIDwvcmFkaWFsR3JhZGllbnQ+CiAgPHJlY3QgeD0iLTUwIiB5PSItNTAiIHdpZHRoPSIxMDEiIGhlaWdodD0iMTAxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.3) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(52%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.3)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.3) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.3) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.3) 100%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.3) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#4d000000',GradientType=1 );
+  height: 506px;
 }
 .front .panel-col-top .views-row-first {
-  width: 420px;
-  padding-top: 74px;
+  height: 506px;
   margin: 0 15px;
+  background: url("../images/garmentbox-screenshot.png") no-repeat right;
 }
 .front .panel-col-top .views-row-first h2 {
+  padding-top: 74px;
   font-size: 50px;
   line-height: 52px;
   color: #dce4e6;
   font-weight: normal;
-  padding-top: 0;
+  width: 375px;
   font-family: "Dosis", Arial, Verdana, Helvetica, sans-serif;
 }
 .front .panel-col-top .views-row-first .field-content p {
   font-size: 20px;
   line-height: 24px;
+  width: 414px;
   font-weight: bold;
   color: #a2c4c5;
   margin-bottom: 30px;

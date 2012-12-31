@@ -11,6 +11,5 @@ $plugin = array(
     'center' => t('Center'),
     'center2' => t('Second center'),
     'center3' => t('Third center'),
-    'center4' => t('Fourth center'),
   ),
 );

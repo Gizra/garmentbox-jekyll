@@ -1,0 +1,40 @@
+#section-header {
+  background: url('../images/bg-header.png') repeat-x;
+  height: 52px;
+
+  .branding-data {
+    float: left; //LTR
+    margin-top: 11px;
+  }
+
+  a {
+    font-size: 14px;
+    @include dosis;
+  }
+
+  .block-main-menu, .block-user-menu {
+    float: right; //LTR
+
+    ul.menu {
+      margin-top: 16px;
+
+      li {
+        float: left; //LTR
+
+        a {
+          color: #a2a2a2;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .block-user-menu {
+    margin-left: 25px; //LTR
+
+    a {
+      font-weight: bold;
+    }
+  }
+}

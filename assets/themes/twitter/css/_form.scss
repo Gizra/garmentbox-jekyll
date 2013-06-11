@@ -1,0 +1,27 @@
+form {
+
+  .form-text {
+    border: 1px solid #a5a698;
+    color: #a5a698;
+    height: 30px;
+    padding: 0 7px;
+    font-size: 15px;
+    @include input-background;
+  }
+
+  input {
+    @include arial;
+
+    &.form-submit {
+      @include neo-sans;
+    }
+  }
+
+  span.button {
+    @include alter-button;
+
+    &:hover {
+      @include alter-button;
+    }
+  }
+}

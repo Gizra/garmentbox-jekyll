@@ -17,6 +17,7 @@
 
 #section-content {
   position: relative;
+  margin-top: -40px;
 }
 
 #section-footer {
@@ -28,6 +29,7 @@
 body {
   background-color: #020000;
   color: #333333;
+  margin: 0;
 
   .pane-content {
     padding: 0 16px;
@@ -70,4 +72,1989 @@ a.button {
   &.alter {
     @include alter-button;
   }
+}
+
+// Alpha
+
+/* Clearfix fix to prevent padding at bottom of page. FML */
+.clearfix:after {
+  font-size: 0;
+}
+
+/* Skip link styling */
+#skip-link {
+  left: 50%;
+  margin-left: -5.25em;
+  margin-top: 0;
+  position: absolute;
+  width: auto;
+  z-index: 50;
+}
+
+#skip-link a,
+#skip-link a:link,
+#skip-link a:visited {
+  background: #444;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: block;
+  padding: 1px 10px 2px 10px;
+  text-decoration: none;
+  -khtml-border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
+  -o-border-radius: 0 0 10px 10px;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+#skip-link a:hover,
+#skip-link a:active,
+#skip-link a:focus {
+  outline: 0;
+}
+
+/* Give pagers and inline LI items simple styling without all the junk from core */
+.inline li,
+.tabs li,
+.breadcrumb li {
+  list-style: none;
+  display: inline;
+  margin-right: 0.5em;
+}
+
+.item-list li {
+  list-style: none;
+}
+
+.pager li {
+  display: inline;
+  margin-right: 0.25em;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.field-label-inline .field-label,
+.field-label-inline .field-items,
+.field-label-inline .field-item {
+  display: inline;
+}
+
+// Alpha default 12 cols.
+
+/*
+ * ==========================================================
+ * Grid
+ * ==========================================================
+ */
+
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10,
+.grid-11, .grid-12 {
+  display: inline;
+  float: left;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.push-1, .pull-1, .push-2, .pull-2, .push-3, .pull-3, .push-4, .pull-4,
+.push-5, .pull-5, .push-6, .pull-6, .push-7, .pull-7, .push-8, .pull-8,
+.push-9, .pull-9, .push-10, .pull-10, .push-11, .pull-11, .push-12, .pull-12 {
+  position: relative;
+}
+
+/*
+ * ==========================================================
+ * Alpha - Omega
+ * ==========================================================
+ */
+
+.alpha {
+  margin-left: 0;
+}
+
+.omega {
+  margin-right: 0;
+}
+
+/*
+ * ==========================================================
+ * Container
+ * ==========================================================
+ */
+
+body {
+  min-width: 1200px;
+}
+
+.container-12 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+}
+
+/*
+ * ==========================================================
+ * Columns
+ * ==========================================================
+ */
+
+.container-12 .grid-1 {
+  width: 80px;
+}
+
+.container-12 .grid-2 {
+  width: 180px;
+}
+
+.container-12 .grid-3 {
+  width: 280px;
+}
+
+.container-12 .grid-4 {
+  width: 380px;
+}
+
+.container-12 .grid-5 {
+  width: 480px;
+}
+
+.container-12 .grid-6 {
+  width: 580px;
+}
+
+.container-12 .grid-7 {
+  width: 680px;
+}
+
+.container-12 .grid-8 {
+  width: 780px;
+}
+
+.container-12 .grid-9 {
+  width: 880px;
+}
+
+.container-12 .grid-10 {
+  width: 980px;
+}
+
+.container-12 .grid-11 {
+  width: 1080px;
+}
+
+.container-12 .grid-12 {
+  width: 1180px;
+}
+
+/*
+ * ==========================================================
+ * Prefix
+ * ==========================================================
+ */
+
+.container-12 .prefix-1 {
+  padding-left: 100px;
+}
+
+.container-12 .prefix-2 {
+  padding-left: 200px;
+}
+
+.container-12 .prefix-3 {
+  padding-left: 300px;
+}
+
+.container-12 .prefix-4 {
+  padding-left: 400px;
+}
+
+.container-12 .prefix-5 {
+  padding-left: 500px;
+}
+
+.container-12 .prefix-6 {
+  padding-left: 600px;
+}
+
+.container-12 .prefix-7 {
+  padding-left: 700px;
+}
+
+.container-12 .prefix-8 {
+  padding-left: 800px;
+}
+
+.container-12 .prefix-9 {
+  padding-left: 900px;
+}
+
+.container-12 .prefix-10 {
+  padding-left: 1000px;
+}
+
+.container-12 .prefix-11 {
+  padding-left: 1100px;
+}
+
+/*
+ * ==========================================================
+ * Suffix
+ * ==========================================================
+ */
+
+.container-12 .suffix-1 {
+  padding-right: 100px;
+}
+
+.container-12 .suffix-2 {
+  padding-right: 200px;
+}
+
+.container-12 .suffix-3 {
+  padding-right: 300px;
+}
+
+.container-12 .suffix-4 {
+  padding-right: 400px;
+}
+
+.container-12 .suffix-5 {
+  padding-right: 500px;
+}
+
+.container-12 .suffix-6 {
+  padding-right: 600px;
+}
+
+.container-12 .suffix-7 {
+  padding-right: 700px;
+}
+
+.container-12 .suffix-8 {
+  padding-right: 800px;
+}
+
+.container-12 .suffix-9 {
+  padding-right: 900px;
+}
+
+.container-12 .suffix-10 {
+  padding-right: 1000px;
+}
+
+.container-12 .suffix-11 {
+  padding-right: 1100px;
+}
+
+/*
+ * ==========================================================
+ * Push
+ * ==========================================================
+ */
+
+.container-12 .push-1 {
+  left: 100px;
+}
+
+.container-12 .push-2 {
+  left: 200px;
+}
+
+.container-12 .push-3 {
+  left: 300px;
+}
+
+.container-12 .push-4 {
+  left: 400px;
+}
+
+.container-12 .push-5 {
+  left: 500px;
+}
+
+.container-12 .push-6 {
+  left: 600px;
+}
+
+.container-12 .push-7 {
+  left: 700px;
+}
+
+.container-12 .push-8 {
+  left: 800px;
+}
+
+.container-12 .push-9 {
+  left: 900px;
+}
+
+.container-12 .push-10 {
+  left: 1000px;
+}
+
+.container-12 .push-11 {
+  left: 1100px;
+}
+
+/*
+ * ==========================================================
+ * Pull
+ * ==========================================================
+ */
+
+.container-12 .pull-1 {
+  left: -100px;
+}
+
+.container-12 .pull-2 {
+  left: -200px;
+}
+
+.container-12 .pull-3 {
+  left: -300px;
+}
+
+.container-12 .pull-4 {
+  left: -400px;
+}
+
+.container-12 .pull-5 {
+  left: -500px;
+}
+
+.container-12 .pull-6 {
+  left: -600px;
+}
+
+.container-12 .pull-7 {
+  left: -700px;
+}
+
+.container-12 .pull-8 {
+  left: -800px;
+}
+
+.container-12 .pull-9 {
+  left: -900px;
+}
+
+.container-12 .pull-10 {
+  left: -1000px;
+}
+
+.container-12 .pull-11 {
+  left: -1100px;
+}
+
+
+
+// Formalize
+
+/* UI Consistency */
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  vertical-align: middle;
+}
+
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+  -webkit-appearance: none;
+  -moz-border-radius: 11px;
+  -webkit-border-radius: 11px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+  border-radius: 11px;
+  background: #ddd url(../images/button.png) repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #ddd));
+  background: -moz-linear-gradient(top center, #fff 0%, #ddd 100%);
+  border: 1px solid;
+  border-color: #ddd #bbb #999;
+  cursor: pointer;
+  color: #333;
+  font: bold 12px/1.2 Arial, sans-serif;
+  outline: 0;
+  overflow: visible;
+  padding: 3px 10px 4px;
+  text-shadow: #fff 0 1px 1px;
+  width: auto;
+  *padding-top: 2px; /* IE7 */
+  *padding-bottom: 0px; /* IE7 */
+}
+
+button {
+  *padding-top: 1px; /* IE7 */
+  *padding-bottom: 1px; /* IE7 */
+}
+
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  -webkit-appearance: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #848484 #c1c1c1 #e1e1e1;
+  color: #000;
+  outline: 0;
+  padding: 2px 3px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  height: 1.8em;
+  *padding-top: 2px; /* IE7 */
+  *padding-bottom: 1px; /* IE7 */
+  *height: auto; /* IE7 */
+}
+
+/* Separate rule for Firefox. Cannot stack with WebKit's. */
+input.placeholder_text,
+textarea.placeholder_text,
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #888;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+button:focus,
+button:active,
+input:focus,
+input:active,
+select:focus,
+select:active,
+textarea:focus,
+textarea:active {
+  -moz-box-shadow: #06f 0 0 7px;
+  -webkit-box-shadow: #06f 0 0 7px;
+  box-shadow: #06f 0 0 7px;
+  z-index: 1; /* For Opera */
+}
+
+input[type="file"]:focus,
+input[type="file"]:active,
+input[type="radio"]:focus,
+input[type="radio"]:active,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+select[disabled],
+textarea[disabled],
+input[type="date"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="email"][disabled],
+input[type="month"][disabled],
+input[type="number"][disabled],
+input[type="password"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="text"][disabled],
+input[type="time"][disabled],
+input[type="url"][disabled],
+input[type="week"][disabled] {
+  background-color: #eee;
+}
+
+button[disabled],
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled] {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: #888;
+  cursor: default;
+}
+
+textarea,
+select[size],
+select[multiple] {
+  height: auto;
+}
+
+/* Tweaks for Safari + Chrome. */
+@media (-webkit-min-device-pixel-ratio: 0) {
+  select {
+    background-image: url(../images/select-arrow.gif);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 20px;
+  }
+
+  select[size],
+  select[multiple] {
+    background-image: none;
+    padding: 0;
+  }
+}
+
+textarea {
+  min-height: 40px;
+  overflow: auto;
+  resize: vertical;
+  width: 100%;
+}
+
+optgroup {
+  color: #000;
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* IE6 */
+.ie6-button,
+* html button {
+  background: #ddd url(../images/button.png) repeat-x;
+  border: 1px solid;
+  border-color: #ddd #bbb #999;
+  cursor: pointer;
+  color: #333;
+  font: bold 12px/1.2 Arial, sans-serif;
+  padding: 2px 10px 0px;
+  overflow: visible;
+  width: auto;
+}
+
+* html button {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.ie6-input,
+* html textarea,
+* html select {
+  background: #fff;
+  border: 1px solid;
+  border-color: #848484 #c1c1c1 #e1e1e1;
+  color: #000;
+  padding: 2px 3px 1px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  vertical-align: top;
+}
+
+* html select {
+  margin-top: 1px;
+}
+
+.placeholder_text,
+.ie6-input-disabled,
+.ie6-button-disabled {
+  color: #888;
+}
+
+.ie6-input-disabled {
+  background: #eee;
+}
+
+// Omega
+
+.logo-img {
+  float: left;
+  margin-right: 20px;
+}
+
+.site-name-slogan {
+  float: left;
+}
+
+.site-name {
+  margin-top: 20px;
+}
+
+.site-name a {
+  text-decoration: none;
+}
+
+.site-name,
+.site-slogan {
+  margin-bottom: 0;
+  line-height: 1em;
+}
+
+.site-slogan {
+  font-weight: normal;
+}
+
+
+// Omega forms
+
+.form-actions input {
+  margin-right: 0.5em;
+}
+
+.form-actions input:hover {
+  background: #FFFFFF;
+}
+
+label {
+  font-weight: bold;
+}
+
+// Omega menu
+
+.menu {
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  list-style: none;
+}
+
+body {
+  font: 13px/1.5 Verdana, Helvetica, Arial, sans-serif;
+}
+
+a:link, a:visited {
+  color: #0062A0;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #202124;
+  text-decoration: none;
+}
+
+a:active {
+  color: #202124;
+  text-decoration: none;
+  color: #000;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 1px;
+  background: #5294c1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.05em;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+/* Make site titles the same size if it's an H1 (home) or H2 (internal) */
+h1.site-name,
+h2.site-name {
+  font-size: 36px;
+}
+
+/* Make it a bit smaller for block headers */
+h2.block-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+h2.node-title {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 19px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h6 {
+  font-size: 15px;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
+}
+
+ul ul,
+ol ol {
+  padding-top: 0.5em;
+}
+
+.node ol,
+.node ul {
+  padding-left: 1.2em;
+}
+
+.node ul.inline,
+.node ol.inline {
+  padding-left: 0;
+}
+
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol,
+ul, pre, table, address, fieldset {
+  margin-bottom: 20px;
+}
+
+dt, .admin h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+dd {
+  padding-left: 10px;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Pagers Positioning */
+.item-list .pager {
+  padding:0;
+  margin: 0;
+}
+
+.item-list .pager li,
+.item-list .pager ul li {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.item-list .pager {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  text-align: left;
+}
+
+.pager li a {
+  display: inline-block;
+}
+
+.pager li.pager-ellipsis,
+.pager li.pager-current,
+.pager li a {
+  padding:4px 8px;
+  text-decoration: none;
+}
+
+.pager li.pager-current {
+  padding:4px 8px;
+  font-weight: bold;
+}
+
+.pager li.pager-first a,
+.pager li.pager-previous a,
+.pager li.pager-next a,
+.pager li.pager-last a {
+  width: 50px;
+  text-align:center;
+  padding: 4px 0;
+}
+
+.pager li.pager-next {
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+
+.pager li.pager-last,
+.pager li.pager-next.last {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-right: 0;
+}
+
+/* Pagers color */
+.pager li.pager-ellipsis,
+.pager li.pager-current,
+.pager li a {
+  color:#1a1a1a;
+}
+
+.pager li {
+  border-right: 1px solid;
+  border-color: #ddd #bbb #999;
+  color: #333;
+  font: bold 12px/1.2 Arial, sans-serif;
+  outline: 0;
+}
+
+.pager li.pager-current {
+  background: #ddd url(../images/button.png) repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1a1a1a), color-stop(1, #5a5a5a));
+  background: -moz-linear-gradient(top center, #1a1a1a 0%, #5a5a5a 100%);
+  color: #FFF;
+  outline: 0;
+}
+
+.pager li.pager-next {
+  border-left: 1px solid;
+  border-color: #ddd #bbb #999;
+}
+
+.pager li a {
+  background: #ddd url(../images/button.png) repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #ddd));
+  background: -moz-linear-gradient(top center, #fff 0%, #ddd 100%);
+  cursor: pointer;
+}
+
+.pager li a:hover {
+  background:#FFF;
+  color:#454545;
+}
+
+/* Add default border radius to list items & links */
+.pager {
+  background:#ebebeb;
+  border:1px solid;
+  border-color: #ddd #bbb #999;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.pager li.first,
+.pager li.first a,
+.pager li.first a:hover {
+  border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+}
+
+.pager li.pager-last,
+.pager li.pager-last a,
+.pager li.pager-last a:hover {
+  border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0;
+}
+
+table {
+  border: 1px solid #CCC;
+  width: 100%;
+}
+
+thead th, th {
+  background: #f7f7f7;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+}
+
+td, th {
+  padding: 4px 8px;
+  vertical-align: middle;
+}
+
+th a, th a:link, th a:visited {
+  text-decoration: none;
+}
+
+th a {
+  display: block;
+}
+
+th a img {
+  margin: 0 0 0 5px;
+}
+
+th.active {
+  background: #DDD;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+}
+
+/* Odd & Even Styles */
+tr.even td {
+  background: #F1F5FA;
+}
+
+tr.odd td {
+  background: #fff;
+}
+
+td.active {
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+}
+
+tr.even td.active {
+  background: #e5e9ed;
+}
+
+tr.odd td.active {
+  background: #f2f2f2;
+}
+
+tr:hover td,
+tr.even:hover td.active,
+tr.odd:hover td.active {
+  background: #FFFEEE;
+}
+
+td ul.links {
+  margin-bottom: 0;
+}
+
+.node-links ul li a,
+.comment-links ul li a {
+  text-transform: lowercase;
+  display: block;
+  float: left;
+  text-decoration: none;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+  margin: 0 0.5em 0.5em 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-border-radius: 11px;
+  -webkit-border-radius: 11px;
+  border-radius: 11px;
+  background: #ddd url(../images/button.png) repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #ddd));
+  background: -moz-linear-gradient(top center, #fff 0%, #ddd 100%);
+  border: 1px solid;
+  border-color: #ddd #bbb #999;
+  cursor: pointer;
+  color: #333;
+  font: bold 12px/1.2 Arial, sans-serif;
+  outline: 0;
+  overflow: visible;
+  padding: 4px 10px 3px;
+  text-shadow: #fff 0 1px 1px;
+  width: auto;
+
+  /* IE7 */
+  *padding-top: 2px;
+  *padding-bottom: 0px;
+}
+
+.node-links ul li a:hover,
+.comment-links ul li a:hover {
+  background: #FFF;
+}
+
+.tips,
+.description {
+  font-size: 10px;
+  color: #6a6a6a;
+}
+
+
+.panel-1col {
+  /*  overflow: hidden;  */
+}
+
+.panel-2col .panel-col-first .inside {
+  margin: 0;
+}
+
+
+.panel-1col .panel-col {
+  width: 100%;
+}
+
+#panels-edit-display .panel-pane,
+#panels-edit-display .helperclass {
+  margin: .5em;
+}
+
+.panel-2col .panel-separator {
+  margin: 0 0 1em 0;
+}
+
+
+div.panel-pane div.admin-links {
+  font-size: xx-small;
+  margin-right: 1em;
+}
+
+div.panel-pane div.admin-links li a {
+  color: #ccc;
+}
+
+div.panel-pane div.admin-links li {
+  padding-bottom: 2px;
+  background: white;
+  z-index: 201;
+}
+
+div.panel-pane div.admin-links:hover a,
+div.panel-pane div.admin-links-hover a {
+  color: #000;
+}
+
+div.panel-pane div.admin-links a:before {
+  content: "[";
+}
+
+div.panel-pane div.admin-links a:after {
+  content: "]";
+}
+
+div.panel-pane div.panel-hide {
+  display: none;
+}
+
+/** For IE we add the class via js; for other browsers we rely on :hover **/
+div.panel-pane div.panel-hide-hover,
+div.panel-pane:hover div.panel-hide {
+  display: block;
+  position: absolute;
+  z-index: 200;
+  margin-top: -1.5em;
+}
+
+div.panel-pane div.node {
+  margin: 0;
+  padding: 0;
+}
+
+div.panel-pane div.feed a {
+  float: right;
+}
+
+
+.search-form {
+  margin-bottom: 1em;
+}
+.search-form input {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.search-results {
+  list-style: none;
+}
+.search-results p {
+  margin-top: 0;
+}
+.search-results .title {
+  font-size: 1.2em;
+}
+.search-results li {
+  margin-bottom: 1em;
+}
+.search-results .search-snippet-info {
+  padding-left: 1em; /* LTR */
+}
+.search-results .search-info {
+  font-size: 0.85em;
+}
+.search-advanced .criterion {
+  float: left; /* LTR */
+  margin-right: 2em; /* LTR */
+}
+.search-advanced .action {
+  float: left; /* LTR */
+  clear: left; /* LTR */
+}
+
+// System
+
+
+/**
+ * @file
+ * Generic theme-independent base styles.
+ */
+
+/**
+ * Autocomplete.
+ *
+ * @see autocomplete.js
+ */
+/* Suggestion list */
+#autocomplete {
+  border: 1px solid;
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+}
+#autocomplete ul {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+#autocomplete li {
+  background: #fff;
+  color: #000;
+  cursor: default;
+  white-space: pre;
+  zoom: 1; /* IE7 */
+}
+/* Animated throbber */
+html.js input.form-autocomplete {
+  background-image: url(../../misc/throbber.gif);
+  background-position: 100% 2px; /* LTR */
+  background-repeat: no-repeat;
+}
+html.js input.throbbing {
+  background-position: 100% -18px; /* LTR */
+}
+
+/**
+ * Collapsible fieldsets.
+ *
+ * @see collapse.js
+ */
+html.js fieldset.collapsed {
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  height: 1em;
+}
+html.js fieldset.collapsed .fieldset-wrapper {
+  display: none;
+}
+fieldset.collapsible {
+  position: relative;
+}
+fieldset.collapsible .fieldset-legend {
+  display: block;
+}
+
+/**
+ * Resizable textareas.
+ *
+ * @see textarea.js
+ */
+.form-textarea-wrapper textarea {
+  display: block;
+  margin: 0;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.resizable-textarea .grippie {
+  background: #eee url(../../misc/grippie.png) no-repeat center 2px;
+  border: 1px solid #ddd;
+  border-top-width: 0;
+  cursor: s-resize;
+  height: 9px;
+  overflow: hidden;
+}
+
+/**
+ * TableDrag behavior.
+ *
+ * @see tabledrag.js
+ */
+body.drag {
+  cursor: move;
+}
+.draggable a.tabledrag-handle {
+  cursor: move;
+  float: left; /* LTR */
+  height: 1.7em;
+  margin-left: -1em; /* LTR */
+  overflow: hidden;
+  text-decoration: none;
+}
+a.tabledrag-handle:hover {
+  text-decoration: none;
+}
+a.tabledrag-handle .handle {
+  background: url(../../misc/draggable.png) no-repeat 6px 9px;
+  height: 13px;
+  margin: -0.4em 0.5em; /* LTR */
+  padding: 0.42em 0.5em; /* LTR */
+  width: 13px;
+}
+a.tabledrag-handle-hover .handle {
+  background-position: 6px -11px;
+}
+div.indentation {
+  float: left; /* LTR */
+  height: 1.7em;
+  margin: -0.4em 0.2em -0.4em -0.4em; /* LTR */
+  padding: 0.42em 0 0.42em 0.6em; /* LTR */
+  width: 20px;
+}
+div.tree-child {
+  background: url(../../misc/tree.png) no-repeat 11px center; /* LTR */
+}
+div.tree-child-last {
+  background: url(../../misc/tree-bottom.png) no-repeat 11px center; /* LTR */
+}
+div.tree-child-horizontal {
+  background: url(../../misc/tree.png) no-repeat -11px center;
+}
+.tabledrag-toggle-weight-wrapper {
+  text-align: right; /* LTR */
+}
+
+/**
+ * TableHeader behavior.
+ *
+ * @see tableheader.js
+ */
+table.sticky-header {
+  background-color: #fff;
+  margin-top: 0;
+}
+
+/**
+ * Progress behavior.
+ *
+ * @see progress.js
+ */
+/* Bar */
+.progress .bar {
+  background-color: #fff;
+  border: 1px solid;
+}
+.progress .filled {
+  background-color: #000;
+  height: 1.5em;
+  width: 5px;
+}
+.progress .percentage {
+  float: right; /* LTR */
+}
+/* Throbber */
+.ajax-progress {
+  display: inline-block;
+}
+.ajax-progress .throbber {
+  background: transparent url(../../misc/throbber.gif) no-repeat 0px -18px;
+  float: left; /* LTR */
+  height: 15px;
+  margin: 2px;
+  width: 15px;
+}
+.ajax-progress .message {
+  padding-left: 20px;
+}
+tr .ajax-progress .throbber {
+  margin: 0 2px;
+}
+.ajax-progress-bar {
+  width: 16em;
+}
+
+/**
+ * Inline items.
+ */
+.container-inline div,
+.container-inline label {
+  display: inline;
+}
+/* Fieldset contents always need to be rendered as block. */
+.container-inline .fieldset-wrapper {
+  display: block;
+}
+
+/**
+ * Prevent text wrapping.
+ */
+.nowrap {
+  white-space: nowrap;
+}
+
+/**
+ * For anything you want to hide on page load when JS is enabled, so
+ * that you can use the JS to control visibility and avoid flicker.
+ */
+html.js .js-hide {
+  display: none;
+}
+
+/**
+ * Hide elements from all users.
+ *
+ * Used for elements which should not be immediately displayed to any user. An
+ * example would be a collapsible fieldset that will be expanded with a click
+ * from a user. The effect of this class can be toggled with the jQuery show()
+ * and hide() functions.
+ */
+.element-hidden {
+  display: none;
+}
+
+/**
+ * Hide elements visually, but keep them available for screen-readers.
+ *
+ * Used for information required for screen-reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user.
+ * "!important" is used to prevent unintentional overrides.
+ */
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+}
+
+/**
+ * The .element-focusable class extends the .element-invisible class to allow
+ * the element to be focusable when navigated to via the keyboard.
+ */
+.element-invisible.element-focusable:active,
+.element-invisible.element-focusable:focus {
+  position: static !important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
+}
+
+/**
+ * Markup free clearing.
+ *
+ * @see http://perishablepress.com/press/2009/12/06/new-clearfix-hack
+ */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* IE6 */
+* html .clearfix {
+  height: 1%;
+}
+/* IE7 */
+*:first-child + html .clearfix {
+  min-height: 1%;
+}
+
+
+
+/**
+ * @file
+ * Styles for menus and navigation markup.
+ */
+
+/**
+ * Markup generated by theme_menu_tree().
+ */
+ul.menu {
+  border: none;
+  list-style: none;
+  text-align: left; /* LTR */
+}
+ul.menu li {
+  margin: 0 0 0 0.5em; /* LTR */
+}
+ul li.expanded {
+  list-style-image: url(../../misc/menu-expanded.png);
+  list-style-type: circle;
+}
+ul li.collapsed {
+  list-style-image: url(../../misc/menu-collapsed.png); /* LTR */
+  list-style-type: disc;
+}
+ul li.leaf {
+  list-style-image: url(../../misc/menu-leaf.png);
+  list-style-type: square;
+}
+li.expanded,
+li.collapsed,
+li.leaf {
+  padding: 0.2em 0.5em 0 0; /* LTR */
+  margin: 0;
+}
+li a.active {
+  color: #000;
+}
+td.menu-disabled {
+  background: #ccc;
+}
+
+/**
+ * Markup generated by theme_links().
+ */
+ul.inline,
+ul.links.inline {
+  display: inline;
+  padding-left: 0;
+}
+ul.inline li {
+  display: inline;
+  list-style-type: none;
+  padding: 0 0.5em;
+}
+
+/**
+ * Markup generated by theme_breadcrumb().
+ */
+.breadcrumb {
+  padding-bottom: 0.5em;
+}
+
+/**
+ * Markup generated by theme_menu_local_tasks().
+ */
+ul.primary {
+  border-bottom: 1px solid #bbb;
+  border-collapse: collapse;
+  height: auto;
+  line-height: normal;
+  list-style: none;
+  margin: 5px;
+  padding: 0 0 0 1em; /* LTR */
+  white-space: nowrap;
+}
+ul.primary li {
+  display: inline;
+}
+ul.primary li a {
+  background-color: #ddd;
+  border-color: #bbb;
+  border-style: solid solid none solid;
+  border-width: 1px;
+  height: auto;
+  margin-right: 0.5em; /* LTR */
+  padding: 0 1em;
+  text-decoration: none;
+}
+ul.primary li.active a {
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-bottom: 1px solid #fff;
+}
+ul.primary li a:hover {
+  background-color: #eee;
+  border-color: #ccc;
+  border-bottom-color: #eee;
+}
+ul.secondary {
+  border-bottom: 1px solid #bbb;
+  padding: 0.5em 1em;
+  margin: 5px;
+}
+ul.secondary li {
+  border-right: 1px solid #ccc; /* LTR */
+  display: inline;
+  padding: 0 1em;
+}
+ul.secondary a {
+  padding: 0;
+  text-decoration: none;
+}
+ul.secondary a.active {
+  border-bottom: 4px solid #999;
+}
+
+
+/**
+ * @file
+ * Styles for system messages.
+ */
+
+div.messages {
+  background-position: 8px 8px; /* LTR */
+  background-repeat: no-repeat;
+  border: 1px solid;
+  margin: 6px 0;
+  padding: 10px 10px 10px 50px; /* LTR */
+}
+
+div.status {
+  background-image: url(../../misc/message-24-ok.png);
+  border-color: #be7;
+}
+div.status,
+.ok {
+  color: #234600;
+}
+div.status,
+table tr.ok {
+  background-color: #f8fff0;
+}
+
+div.warning {
+  background-image: url(../../misc/message-24-warning.png);
+  border-color: #ed5;
+}
+div.warning,
+.warning {
+  color: #840;
+}
+div.warning,
+table tr.warning {
+  background-color: #fffce5;
+}
+
+div.error {
+  background-image: url(../../misc/message-24-error.png);
+  border-color: #ed541d;
+}
+div.error,
+.error {
+  color: #8c2e0b;
+}
+div.error,
+table tr.error {
+  background-color: #fef5f1;
+}
+div.error p.error {
+  color: #333;
+}
+
+div.messages ul {
+  margin: 0 0 0 1em; /* LTR */
+  padding: 0;
+}
+div.messages ul li {
+  list-style-image: none;
+}
+
+
+/**
+ * @file
+ * Basic styling for common markup.
+ */
+
+/**
+ * HTML elements.
+ */
+fieldset {
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+form {
+  margin: 0;
+  padding: 0;
+}
+hr {
+  border: 1px solid gray;
+  height: 1px;
+}
+img {
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+}
+th {
+  border-bottom: 3px solid #ccc;
+  padding-right: 1em; /* LTR */
+  text-align: left; /* LTR */
+}
+tbody {
+  border-top: 1px solid #ccc;
+}
+tr.even,
+tr.odd {
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+  padding: 0.1em 0.6em;
+}
+
+/**
+ * Markup generated by theme_tablesort_indicator().
+ */
+th.active img {
+  display: inline;
+}
+td.active {
+  background-color: #ddd;
+}
+
+/**
+ * Markup generated by theme_item_list().
+ */
+.item-list .title {
+  font-weight: bold;
+}
+.item-list ul {
+  margin: 0 0 0.75em 0;
+  padding: 0;
+}
+.item-list ul li {
+  margin: 0 0 0.25em 1.5em; /* LTR */
+  padding: 0;
+}
+
+/**
+ * Markup generated by Form API.
+ */
+.form-item,
+.form-actions {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tr.odd .form-item,
+tr.even .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+.form-item .description {
+  font-size: 0.85em;
+}
+label {
+  display: block;
+  font-weight: bold;
+}
+label.option {
+  display: inline;
+  font-weight: normal;
+}
+.form-checkboxes .form-item,
+.form-radios .form-item {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+.form-type-radio .description,
+.form-type-checkbox .description {
+  margin-left: 2.4em;
+}
+input.form-checkbox,
+input.form-radio {
+  vertical-align: middle;
+}
+.marker,
+.form-required {
+  color: #f00;
+}
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 2px solid red;
+}
+
+/**
+ * Inline items.
+ */
+.container-inline .form-actions,
+.container-inline.form-actions {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/**
+ * Markup generated by theme_more_link().
+ */
+.more-link {
+  text-align: right; /* LTR */
+}
+
+/**
+ * Markup generated by theme_more_help_link().
+ */
+.more-help-link {
+  text-align: right; /* LTR */
+}
+.more-help-link a {
+  background: url(../../misc/help.png) 0 50% no-repeat; /* LTR */
+  padding: 1px 0 1px 20px; /* LTR */
+}
+
+/**
+ * Markup generated by theme_pager().
+ */
+.item-list .pager {
+  clear: both;
+  text-align: center;
+}
+.item-list .pager li {
+  background-image: none;
+  display: inline;
+  list-style-type: none;
+  padding: 0.5em;
+}
+.pager-current {
+  font-weight: bold;
+}
+
+/**
+ * Autocomplete.
+ *
+ * @see autocomplete.js
+ */
+/* Suggestion list */
+#autocomplete li.selected {
+  background: #0072b9;
+  color: #fff;
+}
+
+/**
+ * Collapsible fieldsets.
+ *
+ * @see collapse.js
+ */
+html.js fieldset.collapsible .fieldset-legend {
+  background: url(../../misc/menu-expanded.png) 5px 65% no-repeat; /* LTR */
+  padding-left: 15px; /* LTR */
+}
+html.js fieldset.collapsed .fieldset-legend {
+  background-image: url(../../misc/menu-collapsed.png); /* LTR */
+  background-position: 5px 50%; /* LTR */
+}
+.fieldset-legend span.summary {
+  color: #999;
+  font-size: 0.9em;
+  margin-left: 0.5em;
+}
+
+/**
+ * TableDrag behavior.
+ *
+ * @see tabledrag.js
+ */
+tr.drag {
+  background-color: #fffff0;
+}
+tr.drag-previous {
+  background-color: #ffd;
+}
+.tabledrag-toggle-weight {
+  font-size: 0.9em;
+}
+body div.tabledrag-changed-warning {
+  margin-bottom: 0.5em;
+}
+
+/**
+ * TableSelect behavior.
+ *
+ * @see tableselect.js
+*/
+tr.selected td {
+  background: #ffc;
+}
+td.checkbox,
+th.checkbox {
+  text-align: center;
+}
+
+/**
+ * Progress bar.
+ *
+ * @see progress.js
+ */
+.progress {
+  font-weight: bold;
+}
+.progress .bar {
+  background: #ccc;
+  border-color: #666;
+  margin: 0 0.2em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.progress .filled {
+  background: #0072b9 url(../../misc/progress.gif);
+}
+
+
+#permissions td.module {
+  font-weight: bold;
+}
+#permissions td.permission {
+  padding-left: 1.5em; /* LTR */
+}
+#permissions tr.odd .form-item,
+#permissions tr.even .form-item {
+  white-space: normal;
+}
+#user-admin-settings fieldset .fieldset-description {
+  font-size: 0.85em;
+  padding-bottom: .5em;
+}
+
+/**
+ * Override default textfield float to put the "Add role" button next to
+ * the input textfield.
+ */
+#user-admin-roles td.edit-name {
+  clear: both;
+}
+#user-admin-roles .form-item-name {
+  float: left; /* LTR */
+  margin-right: 1em; /* LTR */
+}
+
+/**
+ * Password strength indicator.
+ */
+.password-strength {
+  width: 17em;
+  float: right;  /* LTR */
+  margin-top: 1.4em;
+}
+.password-strength-title {
+  display: inline;
+}
+.password-strength-text {
+  float: right; /* LTR */
+  font-weight: bold;
+}
+.password-indicator {
+  background-color: #C4C4C4;
+  height: 0.3em;
+  width: 100%;
+}
+.password-indicator div {
+  height: 100%;
+  width: 0%;
+  background-color: #47C965;
+}
+input.password-confirm,
+input.password-field {
+  width: 16em;
+  margin-bottom: 0.4em;
+}
+div.password-confirm {
+  float: right;  /* LTR */
+  margin-top: 1.5em;
+  visibility: hidden;
+  width: 17em;
+}
+div.form-item div.password-suggestions {
+  padding: 0.2em 0.5em;
+  margin: 0.7em 0;
+  width: 38.5em;
+  border: 1px solid #B4B4B4;
+}
+div.password-suggestions ul {
+  margin-bottom: 0;
+}
+.confirm-parent,
+.password-parent {
+  clear: left; /* LTR */
+  margin: 0;
+  width: 36.3em;
+}
+
+/* Generated by user.module but used by profile.module: */
+.profile {
+  clear: both;
+  margin: 1em 0;
+}
+.profile .user-picture {
+  float: right; /* LTR */
+  margin: 0 1em 1em 0; /* LTR */
+}
+.profile h3 {
+  border-bottom: 1px solid #ccc;
+}
+.profile dl {
+  margin: 0 0 1.5em 0;
+}
+.profile dt {
+  margin: 0 0 0.2em 0;
+  font-weight: bold;
+}
+.profile dd {
+  margin: 0 0 1em 0;
+}
+
+#views-slideshow-form-wrapper .form-item.dependent-options {
+  padding-left: 5px;
+}
+
+#views-slideshow-form-wrapper .vs-dependent {
+  padding-left: 30px;
+}
+
+.views-exposed-form .views-exposed-widget {
+  float: left; /* LTR */
+  padding: .5em 1em 0 0; /* LTR */
+}
+
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 1.6em;
+}
+
+.views-exposed-form .form-item,
+.views-exposed-form .form-submit {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.views-exposed-form label {
+  font-weight: bold;
+}
+
+.views-exposed-widgets {
+  margin-bottom: .5em;
+}
+
+/* table style column align */
+.views-align-left {
+  text-align: left;
+}
+.views-align-right {
+  text-align: right;
+}
+.views-align-center {
+  text-align: center;
+}
+
+/* Remove the border on tbody that system puts in */
+.views-view-grid tbody {
+  border-top: none;
+}
+
+.view .progress-disabled {
+  float: none;
 }

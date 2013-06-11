@@ -75,7 +75,7 @@
   font-weight: bold;
   color: #a2c4c5;
   margin-bottom: 30px;
-  font-family: "Neo Sans", Arial, Verdana, Helvetica, sans-serif;
+  font-family: "Raleway", Arial, Verdana, Helvetica, sans-serif;
 }
 .front .panel-col-center {
   background: url("../images/bg-paper.png") repeat-x;
@@ -321,7 +321,7 @@ form input {
   font-family: Arial, Verdana, Helvetica, sans-serif;
 }
 form input.form-submit {
-  font-family: "Neo Sans", Arial, Verdana, Helvetica, sans-serif;
+  font-family: "Raleway", Arial, Verdana, Helvetica, sans-serif;
 }
 form span.button {
   text-decoration: none;
@@ -441,7 +441,7 @@ body .pane-content {
 }
 
 h1, h2, h3, h4, h5, h6, * {
-  font-family: "Neo Sans", Arial, Verdana, Helvetica, sans-serif;
+  font-family: "Raleway", Arial, Verdana, Helvetica, sans-serif;
 }
 
 h2 {

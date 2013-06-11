@@ -1,0 +1,242 @@
+---
+layout: nil
+---
+
+<html>
+<head>
+  <!-- Bootstrap -->
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="{{ BASE_PATH}}/assets/themes/twitter/css/style.css" rel="stylesheet">
+  <style type="text/css">
+
+      /* Copyright 2013 Soundarapandian
+       * Pricing table built on Twitter Bootstrap.
+       */
+
+    body {
+      /* Below styles are used only for pricing table demo purpose.
+       * and these styles are not required to integrate the pricing table
+       * into your application */
+      padding-bottom: 50px;
+      background-image: url('../images/background.png');
+      background-color: white;;
+    }
+
+      /*
+       * =================== Start pricing table =====================*/
+
+    .pricing-table .plan {
+      border-radius: 5px;
+      text-align: center;
+      background-color: #f3f3f3;
+      -moz-box-shadow: 0 0 6px 2px #b0b2ab;
+      -webkit-box-shadow: 0 0 6px 2px #b0b2ab;
+      box-shadow: 0 0 6px 2px #b0b2ab;
+    }
+
+    .pricing-table .plan:hover {
+      background-color: #fff;
+      -moz-box-shadow: 0 0 12px 3px #b0b2ab;
+      -webkit-box-shadow: 0 0 12px 3px #b0b2ab;
+      box-shadow: 0 0 12px 3px #b0b2ab;
+    }
+
+    .pricing-table .plan .plan-name {
+      padding: 20px;
+      color: #fff;
+      background-color: #5e5f59;
+      -moz-border-radius: 5px 5px 0 0;
+      -webkit-border-radius: 5px 5px 0 0;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .pricing-table .plan .plan-name span {
+      font-size: 20px;
+    }
+
+    .pricing-table .plan ul {
+      list-style: none;
+      margin: 0;
+      -moz-border-radius: 0 0 5px 5px;
+      -webkit-border-radius: 0 0 5px 5px;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .pricing-table .plan ul li.plan-feature {
+      padding: 15px 10px;
+      border-top: 1px solid #c5c8c0;
+    }
+
+    .pricing-three-column {
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    .pricing-variable-height .plan {
+      float: none;
+      margin-left: 2%;
+      vertical-align: bottom;
+      display: inline-block;
+      /* Support for inline-block in IE7 */
+      zoom:1;
+      *display:inline;
+    }
+
+    .plan-mouseover .plan-name {
+      background-color: #4e9a06 !important;
+    }
+
+    .btn-plan-select {
+      padding: 8px 25px;
+      font-size: 18px;
+    }
+
+      /*
+       * =================== End pricing table =====================*/
+      /*
+       * Copyright 2013 Soundarapandian
+       * Pricing table built on Twitter Bootstrap.
+
+        Responsive styles for pricing table tested in the
+        below device simulations.
+        Apple iPhone
+          320x480 Portrait
+          480x320 Landscape
+        Apple iPhone 5
+          320x568 Portrait
+          568x320 Landscape
+        Small Tablet
+          600x800 Portrait
+          800x600 Landscape
+        Tablet
+          768x1024 Portrait
+          1024x768 Landscape
+        Widescreen
+          1280x800 Landscape
+          800x1280 Portrait
+      */
+
+    @media (max-width: 320px) {
+      .pricing-three-column {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .pricing-table .plan {
+        margin-bottom: 20px;
+      }
+      .pricing-variable-height .plan {
+        margin-left: 0;
+      }
+      .pricing-three-column {
+        width: 100%;
+      }
+    }
+
+
+  </style>
+</head>
+
+<header id="section-header" class="section section-header">
+  <div id="zone-branding-wrapper" class="zone-wrapper zone-branding-wrapper clearfix">
+    <div id="zone-branding" class="zone zone-branding clearfix container-12">
+      <div class="grid-12 region region-branding" id="region-branding">
+        <div class="region-inner region-branding-inner">
+          <div class="branding-data clearfix">
+            <div class="logo-img">
+              <a href="/" rel="home" title="Site-Install" class="active"><img src="/assets/themes//twitter/images/logo.png" alt="Site-Install" id="logo"></a>      </div>
+          </div>
+          <div class="block block-system block-menu block-main-menu block-system-main-menu odd block-without-title" id="block-system-main-menu">
+            <div class="block-inner clearfix">
+
+              <div class="content clearfix">
+                <ul class="menu"><li class="first leaf"><a href="/GB-market/www/add-ons">Add-ons</a></li>
+                  <li class="last leaf"><a href="/GB-market/www/services">Services</a></li>
+                </ul>    </div>
+            </div>
+          </div>  </div>
+      </div>
+    </div>
+  </div><div id="zone-menu-wrapper" class="zone-wrapper zone-menu-wrapper clearfix">
+  <div id="zone-menu" class="zone zone-menu clearfix container-12">
+    <div class="grid-12 region region-menu" id="region-menu">
+      <div class="region-inner region-menu-inner">
+      </div>
+    </div>
+  </div>
+</div></header>
+
+<div class="container">
+  <!-- START 4 column pricing table(equal height) -->
+  <div class="page-header">
+    <h2>Pricing Plans</h2>
+  </div>
+  <div class="row-fluid pricing-table">
+    <div class="span3 plan">
+      <div class="plan-name">
+        <h2>Basic</h2>
+        <span>$35/Month</span>
+      </div>
+      <ul>
+        <li class="plan-feature">1 User</li>
+        <li class="plan-feature">25 GB HD</li>
+        <li class="plan-feature">Unlimited upload</li>
+        <li class="plan-feature">Unlimited download</li>
+        <li class="plan-feature">24hrs support</li>
+        <li class="plan-feature"><a href="#" class="btn btn-success btn-plan-select">Coming Soon</a></li>
+      </ul>
+    </div>
+
+    <div class="span3 plan">
+      <div class="plan-name">
+        <h2>Pro</h2>
+        <span>$150/Month</span>
+      </div>
+      <ul>
+        <li class="plan-feature">5 Users</li>
+        <li class="plan-feature">125 GB HD</li>
+        <li class="plan-feature">Unlimited upload</li>
+        <li class="plan-feature">Unlimited download</li>
+        <li class="plan-feature">24hrs support</li>
+        <li class="plan-feature"><a href="#" class="btn btn-success btn-plan-select">Coming Soon</a></li>
+      </ul>
+    </div>
+    <div class="span3 plan">
+      <div class="plan-name">
+        <h2>Platinum</h2>
+        <span>$300/Month</span>
+      </div>
+      <ul>
+        <li class="plan-feature">15 Users</li>
+        <li class="plan-feature">250 GB HD</li>
+        <li class="plan-feature">Unlimited upload</li>
+        <li class="plan-feature">Unlimited download</li>
+        <li class="plan-feature">24hrs support</li>
+        <li class="plan-feature"><a href="#" class="btn btn-success btn-plan-select">Coming Soon</a></li>
+      </ul>
+    </div>
+    <div class="span3 plan">
+      <div class="plan-name">
+        <h2>Extreme</h2>
+        <span>$500/Month</span>
+      </div>
+      <ul>
+        <li class="plan-feature">20 Users</li>
+        <li class="plan-feature">500 GB HD</li>
+        <li class="plan-feature">Unlimited upload</li>
+        <li class="plan-feature">Unlimited download</li>
+        <li class="plan-feature">24hrs support</li>
+        <li class="plan-feature"><a href="#" class="btn btn-success btn-plan-select">Coming Soon</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- END 4 column pricing table(equal height) -->
+</div>
+
+<footer>
+  <p>&copy; {{ site.time | date: '%Y' }} GarmentBox
+  </p>
+</footer>
+</html>

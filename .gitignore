@@ -6,14 +6,14 @@ sites/*/files
 sites/*/private
 
 # Contribs
-gbmarket/modules/contrib/*
-gbmarket/themes/contrib/*
-gbmarket/1
-gbmarket/libraries
+garmentbox-jekyll/modules/contrib/*
+garmentbox-jekyll/themes/contrib/*
+garmentbox-jekyll/1
+garmentbox-jekyll/libraries
 www
 
 # SASS
-gbmarket/themes/gbmarkettheme/.sass-cache/*
+gbmarket/themes/garmentbox-jekyll/.sass-cache/*
 
 #Aptana
 .project
